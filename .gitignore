@@ -1,0 +1,17 @@
+# Entornos y cachés
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ipynb_checkpoints/
+.streamlit/secrets.toml
+
+# Modelos pesados (XLM-R no se versiona; la SVM sí)
+*.bin
+*.safetensors
+checkpoints/
+
+# Sistema
+.DS_Store
+Thumbs.db

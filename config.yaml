@@ -1,0 +1,62 @@
+# Configuración central de TriajeIA-ISP. Todas las rutas son relativas a la raíz del repositorio.
+
+semilla: 42
+
+datos:
+  corpus: data/raw/corpus_quejas_isp_sintetico_v2.csv
+  procesados: data/processed
+  columna_texto: queja
+  objetivos: [categoria, prioridad]          # el área de atención se deduce de la categoría
+  fraccion_validacion: 0.15                   # se separa del entrenamiento; la prueba (200) ya viene fija
+  subgrupos: [registro, region, canal, dificultad]
+
+# Tabla categoría → área de atención (guía de etiquetado del corpus v2, sección 2)
+areas:
+  SIN_SERVICIO: SOPORTE_TECNICO
+  INTERMITENCIA: SOPORTE_TECNICO
+  VELOCIDAD_LENTA: SOPORTE_TECNICO
+  WIFI_EQUIPO: SOPORTE_TECNICO
+  DANO_FISICO_RED: PLANTA_EXTERNA
+  FACTURACION: FACTURACION_COBRANZAS
+  INSTALACION: INSTALACIONES
+  AGENDAMIENTO_VISITA: INSTALACIONES
+  ATENCION_CLIENTE: SERVICIO_CLIENTE
+  CANCELACION_TRASLADO_PLAN: SERVICIO_CLIENTE
+
+svm:                                          # configuración de partida (Semana 3: mejor C = 0,3)
+  C: 0.3
+  palabra_ngramas: [1, 2]
+  caracter_ngramas: [3, 5]
+  min_df: 1
+  sublinear_tf: true
+  class_weight: balanced
+  usar_caracteres: true
+  calibracion_cv: 5
+
+xlmr:
+  modelo: FacebookAI/xlm-roberta-base
+  max_len: 128
+  lote: 16
+  lr: 2.0e-5
+  weight_decay: 0.01
+  dropout: 0.1
+  epocas_max: 15
+  paciencia: 3                                # parada temprana por F1-macro de validación (lección de la Semana 3)
+
+optimizacion:
+  trials_svm: 100
+  trials_xlmr: 8
+  cv_folds: 5
+
+evaluacion:
+  bootstrap: 2000
+  cv_repeticiones: 3
+  cv_folds: 5
+  n_minimo_subgrupo: 30                       # con menos casos se reporta sin sacar conclusiones
+  brecha_max_f1_subgrupo: 0.10                # criterio de equidad de la Semana 4
+  recall_min_prioridad_alta: 0.90
+  caida_max_estres: 0.05
+
+decision:
+  umbral_confianza: 0.50                      # por debajo, «requiere revisión humana» (se recalibra en 05_evaluacion)
+  terminos_influyentes: 5

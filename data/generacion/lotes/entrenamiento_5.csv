@@ -1,0 +1,261 @@
+id,categoria,prioridad,motivo_prioridad,region,ciudad,canal,persona,dependencia_mencionada,dias_problema,reclamo_previo,registro,dificultad,categoria_secundaria,longitud
+1204,INSTALACION,media,sin_agravante,costa,Salinas,Formulario web,jubilado con poca experiencia en tecnología,,4,no,informal,normal,,media
+1205,DANO_FISICO_RED,alta,afectacion_total_o_riesgo_fisico,costa,Salinas,Redes sociales,migrante retornado que se comunica con familia en el exterior,,2,si,formal,normal,,larga
+1206,ATENCION_CLIENTE,baja,sin_afectacion_tecnica,sierra,Ibarra,Llamada transcrita,cliente antiguo de varios años,,2,no,muy_informal,normal,,media
+1207,VELOCIDAD_LENTA,alta,dependencia_critica,costa,Salinas,Formulario web,dueño de un cyber o centro de copiado,negocio,1,no,muy_informal,dos_problemas,WIFI_EQUIPO,larga
+1208,ATENCION_CLIENTE,baja,sin_afectacion_tecnica,sierra,Quito,Correo,cliente antiguo de varios años,,0,no,muy_informal,normal,,larga
+1209,INTERMITENCIA,alta,mas_de_4_dias,costa,Babahoyo,Correo,profesional que paga puntual y está molesto,,5,no,muy_informal,normal,,media
+1210,ATENCION_CLIENTE,baja,sin_afectacion_tecnica,sierra,Tulcán,Correo,dueño de un cyber o centro de copiado,negocio,1,si,con_errores,normal,,media
+1211,ATENCION_CLIENTE,baja,sin_afectacion_tecnica,sierra,Sangolquí,App,jubilado con poca experiencia en tecnología,,0,si,con_errores,normal,,corta
+1212,VELOCIDAD_LENTA,media,degradacion_parcial,sierra,Tulcán,App,migrante retornado que se comunica con familia en el exterior,,3,no,muy_informal,normal,,corta
+1213,SIN_SERVICIO,alta,afectacion_total_o_riesgo_fisico,sierra,Cayambe,WhatsApp,adulto mayor que vive solo,salud,7,no,informal,normal,,media
+1214,INTERMITENCIA,media,degradacion_parcial,costa,Samborondón,Llamada transcrita,cliente nuevo,,2,no,con_errores,normal,,larga
+1215,AGENDAMIENTO_VISITA,media,sin_agravante,sierra,Cuenca,Llamada transcrita,persona que vive en una zona rural o periférica,,1,no,con_errores,ambigua,INTERMITENCIA,media
+1216,CANCELACION_TRASLADO_PLAN,baja,sin_afectacion_tecnica,sierra,Riobamba,Correo,migrante retornado que se comunica con familia en el exterior,,7,no,informal,normal,,media
+1217,ATENCION_CLIENTE,baja,sin_afectacion_tecnica,sierra,Otavalo,Llamada transcrita,trabajador que llega de noche y usa streaming,,0,no,muy_informal,normal,,media
+1218,ATENCION_CLIENTE,baja,sin_afectacion_tecnica,amazonia,Macas,Llamada transcrita,jubilado con poca experiencia en tecnología,,1,no,informal,normal,,media
+1219,INTERMITENCIA,alta,dependencia_critica,sierra,Sangolquí,Correo,adulto mayor que vive solo,salud,7,no,informal,normal,,corta
+1220,WIFI_EQUIPO,media,dependencia_critica,sierra,Loja,Redes sociales,emprendedora que vende por redes sociales,negocio,2,si,informal,normal,,media
+1221,SIN_SERVICIO,alta,afectacion_total_o_riesgo_fisico,costa,Durán,WhatsApp,inquilino que comparte el servicio con otras familias,,1,no,informal,normal,,media
+1222,INTERMITENCIA,alta,dependencia_critica,sierra,Cayambe,WhatsApp,emprendedora que vende por redes sociales,negocio,2,no,formal,ambigua,INSTALACION,media
+1223,AGENDAMIENTO_VISITA,media,sin_agravante,costa,Durán,Formulario web,profesional que paga puntual y está molesto,,1,no,formal,ambigua,WIFI_EQUIPO,larga
+1224,WIFI_EQUIPO,baja,sin_agravante,costa,Samborondón,Redes sociales,profesional que paga puntual y está molesto,,4,no,informal,ambigua,INSTALACION,media
+1225,WIFI_EQUIPO,media,dependencia_critica,costa,Quevedo,Llamada transcrita,hijo que cuida a su madre adulta mayor que hace videollamadas médicas,salud,0,si,muy_informal,dos_problemas,ATENCION_CLIENTE,media
+1226,FACTURACION,media,reclamo_economico,sierra,Ambato,WhatsApp,trabajador que llega de noche y usa streaming,,5,no,muy_informal,ambigua,DANO_FISICO_RED,media
+1228,INSTALACION,media,sin_agravante,amazonia,Tena,Llamada transcrita,jubilado con poca experiencia en tecnología,,10,no,con_errores,normal,,media
+1229,VELOCIDAD_LENTA,media,degradacion_parcial,sierra,Tulcán,WhatsApp,profesional que paga puntual y está molesto,,1,no,informal,normal,,media
+1230,INTERMITENCIA,media,degradacion_parcial,sierra,Ambato,Llamada transcrita,estudiante universitario con clases virtuales,estudios,4,no,informal,normal,,larga
+1231,SIN_SERVICIO,alta,afectacion_total_o_riesgo_fisico,sierra,Otavalo,Llamada transcrita,trabajador que llega de noche y usa streaming,,0,no,con_errores,normal,,media
+1232,VELOCIDAD_LENTA,alta,reincidencia,costa,Guayaquil,WhatsApp,madre de familia con hijos en clases virtuales,estudios,1,si,formal,normal,,larga
+1233,CANCELACION_TRASLADO_PLAN,baja,sin_afectacion_tecnica,costa,Babahoyo,Redes sociales,trabajador que llega de noche y usa streaming,,2,no,formal,normal,,larga
+1234,AGENDAMIENTO_VISITA,media,sin_agravante,costa,La Libertad,WhatsApp,emprendedora que vende por redes sociales,negocio,2,no,muy_informal,normal,,corta
+1235,SIN_SERVICIO,alta,afectacion_total_o_riesgo_fisico,sierra,Riobamba,Correo,inquilino que comparte el servicio con otras familias,,1,no,muy_informal,normal,,media
+1237,DANO_FISICO_RED,alta,afectacion_total_o_riesgo_fisico,costa,Salinas,Redes sociales,cliente nuevo,,0,no,informal,normal,,media
+1238,AGENDAMIENTO_VISITA,alta,reincidencia,sierra,Cayambe,WhatsApp,cliente antiguo de varios años,,0,si,formal,dos_problemas,ATENCION_CLIENTE,corta
+1239,INSTALACION,media,sin_agravante,costa,Salinas,WhatsApp,profesional que paga puntual y está molesto,,3,no,informal,normal,,corta
+1240,INTERMITENCIA,alta,dependencia_critica,costa,Santo Domingo,Formulario web,persona que trabaja desde casa (teletrabajo),teletrabajo,0,no,formal,normal,,corta
+1241,FACTURACION,media,reclamo_economico,costa,Daule,Correo,estudiante universitario con clases virtuales,estudios,2,no,informal,normal,,media
+1242,CANCELACION_TRASLADO_PLAN,baja,sin_afectacion_tecnica,costa,Samborondón,Correo,migrante retornado que se comunica con familia en el exterior,,5,si,informal,normal,,media
+1243,FACTURACION,media,reclamo_economico,sierra,Cuenca,Formulario web,inquilino que comparte el servicio con otras familias,,1,no,con_errores,normal,,media
+1245,FACTURACION,media,reclamo_economico,costa,Samborondón,WhatsApp,emprendedora que vende por redes sociales,negocio,2,no,formal,normal,,corta
+1246,VELOCIDAD_LENTA,media,degradacion_parcial,sierra,Sangolquí,WhatsApp,emprendedora que vende por redes sociales,,2,no,formal,normal,,corta
+1247,INTERMITENCIA,alta,dependencia_critica,sierra,Cuenca,WhatsApp,persona que trabaja desde casa (teletrabajo),teletrabajo,1,si,informal,normal,,corta
+1249,INTERMITENCIA,alta,mas_de_4_dias,costa,Daule,Llamada transcrita,joven gamer,,5,no,formal,normal,,larga
+1250,VELOCIDAD_LENTA,media,degradacion_parcial,amazonia,Zamora,Llamada transcrita,migrante retornado que se comunica con familia en el exterior,,0,no,informal,ambigua,INTERMITENCIA,corta
+1251,WIFI_EQUIPO,baja,sin_agravante,sierra,Loja,WhatsApp,joven gamer,,2,no,con_errores,normal,,larga
+1252,SIN_SERVICIO,alta,afectacion_total_o_riesgo_fisico,costa,Santo Domingo,Llamada transcrita,hijo que cuida a su madre adulta mayor que hace videollamadas médicas,,3,no,muy_informal,normal,,media
+1254,AGENDAMIENTO_VISITA,media,sin_agravante,sierra,Cuenca,Llamada transcrita,trabajador que llega de noche y usa streaming,,3,no,informal,normal,,media
+1255,DANO_FISICO_RED,alta,afectacion_total_o_riesgo_fisico,sierra,Riobamba,Redes sociales,adulto mayor que vive solo,salud,4,no,formal,normal,,corta
+1256,VELOCIDAD_LENTA,media,degradacion_parcial,sierra,Ambato,Llamada transcrita,estudiante de colegio que rinde exámenes en línea,estudios,1,no,muy_informal,normal,,media
+1257,WIFI_EQUIPO,media,dependencia_critica,sierra,Cayambe,Redes sociales,dueña de una tienda que cobra por transferencia,negocio,1,si,informal,normal,,media
+1258,INTERMITENCIA,media,degradacion_parcial,costa,Durán,WhatsApp,dueña de una tienda que cobra por transferencia,,2,no,formal,normal,,larga
+1259,INTERMITENCIA,alta,dependencia_critica,sierra,Tulcán,Llamada transcrita,dueña de una tienda que cobra por transferencia,negocio,1,si,formal,normal,,media
+1260,INTERMITENCIA,alta,reincidencia,costa,Portoviejo,App,migrante retornado que se comunica con familia en el exterior,,3,si,con_errores,normal,,larga
+1261,AGENDAMIENTO_VISITA,media,sin_agravante,costa,Santo Domingo,App,trabajador que llega de noche y usa streaming,,0,no,muy_informal,ambigua,INTERMITENCIA,media
+1262,INTERMITENCIA,media,degradacion_parcial,sierra,Ibarra,WhatsApp,joven gamer,,0,no,informal,normal,,larga
+1263,AGENDAMIENTO_VISITA,media,sin_agravante,sierra,Ibarra,WhatsApp,madre de familia con hijos en clases virtuales,estudios,5,no,muy_informal,normal,,corta
+1264,DANO_FISICO_RED,alta,afectacion_total_o_riesgo_fisico,sierra,Azogues,Formulario web,profesional que paga puntual y está molesto,,1,si,con_errores,normal,,media
+1265,SIN_SERVICIO,alta,afectacion_total_o_riesgo_fisico,costa,Babahoyo,Llamada transcrita,inquilino que comparte el servicio con otras familias,,1,no,muy_informal,ambigua,ATENCION_CLIENTE,media
+1266,FACTURACION,media,reclamo_economico,costa,Daule,WhatsApp,trabajador que llega de noche y usa streaming,,1,no,con_errores,ambigua,CANCELACION_TRASLADO_PLAN,larga
+1267,INTERMITENCIA,alta,dependencia_critica,costa,Portoviejo,WhatsApp,adulto mayor que vive solo,salud,7,no,formal,dos_problemas,VELOCIDAD_LENTA,media
+1268,FACTURACION,media,reclamo_economico,amazonia,Tena,App,ama de casa,,0,no,informal,dos_problemas,INTERMITENCIA,media
+1269,SIN_SERVICIO,alta,afectacion_total_o_riesgo_fisico,sierra,Ibarra,Llamada transcrita,trabajador que llega de noche y usa streaming,,2,no,formal,normal,,media
+1270,AGENDAMIENTO_VISITA,media,sin_agravante,costa,Machala,App,ama de casa,,0,no,informal,normal,,media
+1271,SIN_SERVICIO,alta,afectacion_total_o_riesgo_fisico,costa,Esmeraldas,Redes sociales,persona que vive en una zona rural o periférica,,1,no,muy_informal,normal,,corta
+1272,INTERMITENCIA,alta,reincidencia,costa,Salinas,Redes sociales,trabajador que llega de noche y usa streaming,,1,si,muy_informal,ambigua,CANCELACION_TRASLADO_PLAN,media
+1273,INTERMITENCIA,alta,dependencia_critica,costa,Portoviejo,Llamada transcrita,dueño de un cyber o centro de copiado,negocio,1,no,formal,normal,,corta
+1274,SIN_SERVICIO,alta,afectacion_total_o_riesgo_fisico,costa,Santo Domingo,Llamada transcrita,adulto mayor que vive solo,,2,no,con_errores,dos_problemas,CANCELACION_TRASLADO_PLAN,media
+1275,WIFI_EQUIPO,baja,sin_agravante,costa,Portoviejo,WhatsApp,trabajador que llega de noche y usa streaming,,1,no,muy_informal,normal,,media
+1276,AGENDAMIENTO_VISITA,alta,reincidencia,sierra,Ibarra,Llamada transcrita,profesional que paga puntual y está molesto,,2,si,informal,normal,,larga
+1277,SIN_SERVICIO,alta,afectacion_total_o_riesgo_fisico,costa,Milagro,Llamada transcrita,dueño de un cyber o centro de copiado,negocio,1,no,informal,ambigua,ATENCION_CLIENTE,media
+1278,VELOCIDAD_LENTA,alta,mas_de_4_dias,costa,Babahoyo,WhatsApp,persona que vive en una zona rural o periférica,,10,no,formal,normal,,media
+1279,ATENCION_CLIENTE,baja,sin_afectacion_tecnica,costa,Babahoyo,Formulario web,persona con un familiar con equipo médico o teleconsultas,,0,no,con_errores,normal,,media
+1281,WIFI_EQUIPO,baja,sin_agravante,costa,Durán,Formulario web,cliente nuevo,,5,no,informal,normal,,media
+1282,INSTALACION,media,sin_agravante,costa,Salinas,Redes sociales,migrante retornado que se comunica con familia en el exterior,,1,no,informal,ambigua,INTERMITENCIA,corta
+1283,FACTURACION,media,reclamo_economico,sierra,Quito,Llamada transcrita,persona que vive en una zona rural o periférica,,0,no,muy_informal,ambigua,VELOCIDAD_LENTA,media
+1284,INTERMITENCIA,media,degradacion_parcial,sierra,Azogues,App,madre de familia con hijos en clases virtuales,estudios,0,no,con_errores,normal,,media
+1285,AGENDAMIENTO_VISITA,media,sin_agravante,sierra,Latacunga,WhatsApp,ama de casa,,2,no,formal,normal,,media
+1286,ATENCION_CLIENTE,baja,sin_afectacion_tecnica,sierra,Ambato,App,joven gamer,,4,no,informal,ambigua,INTERMITENCIA,larga
+1287,INTERMITENCIA,alta,dependencia_critica,costa,Daule,WhatsApp,dueño de un cyber o centro de copiado,negocio,1,no,formal,normal,,corta
+1288,INTERMITENCIA,media,degradacion_parcial,sierra,Sangolquí,Llamada transcrita,hijo que cuida a su madre adulta mayor que hace videollamadas médicas,,4,no,informal,normal,,media
+1289,INSTALACION,media,sin_agravante,sierra,Guaranda,Llamada transcrita,adulto mayor que vive solo,,5,no,informal,normal,,media
+1291,DANO_FISICO_RED,alta,afectacion_total_o_riesgo_fisico,sierra,Guaranda,WhatsApp,ama de casa,,4,no,con_errores,normal,,corta
+1292,AGENDAMIENTO_VISITA,media,sin_agravante,sierra,Sangolquí,Llamada transcrita,cliente antiguo de varios años,,1,no,informal,normal,,corta
+1293,SIN_SERVICIO,alta,afectacion_total_o_riesgo_fisico,costa,Guayaquil,App,jubilado con poca experiencia en tecnología,,5,no,con_errores,normal,,media
+1294,WIFI_EQUIPO,media,reincidencia,sierra,Ambato,WhatsApp,jubilado con poca experiencia en tecnología,,0,si,informal,normal,,media
+1295,FACTURACION,media,reclamo_economico,sierra,Quito,WhatsApp,trabajador que llega de noche y usa streaming,,5,no,muy_informal,normal,,larga
+1296,VELOCIDAD_LENTA,alta,reincidencia,costa,Guayaquil,Llamada transcrita,migrante retornado que se comunica con familia en el exterior,,0,si,informal,dos_problemas,CANCELACION_TRASLADO_PLAN,media
+1297,WIFI_EQUIPO,baja,sin_agravante,costa,Santo Domingo,WhatsApp,estudiante de colegio que rinde exámenes en línea,estudios,1,no,informal,dos_problemas,SIN_SERVICIO,larga
+1299,AGENDAMIENTO_VISITA,media,sin_agravante,sierra,Sangolquí,WhatsApp,dueño de un cyber o centro de copiado,negocio,0,no,muy_informal,normal,,corta
+1300,INSTALACION,alta,reincidencia,sierra,Riobamba,WhatsApp,profesional que paga puntual y está molesto,,1,si,informal,normal,,media
+1301,SIN_SERVICIO,alta,afectacion_total_o_riesgo_fisico,sierra,Cuenca,WhatsApp,dueña de una tienda que cobra por transferencia,negocio,4,no,informal,ambigua,INSTALACION,corta
+1302,WIFI_EQUIPO,baja,sin_agravante,costa,Guayaquil,WhatsApp,jubilado con poca experiencia en tecnología,,2,no,informal,normal,,media
+1303,WIFI_EQUIPO,baja,sin_agravante,costa,Machala,Correo,trabajador que llega de noche y usa streaming,,5,no,formal,normal,,media
+1304,SIN_SERVICIO,alta,afectacion_total_o_riesgo_fisico,costa,Salinas,Llamada transcrita,profesional que paga puntual y está molesto,,1,no,informal,normal,,larga
+1305,SIN_SERVICIO,alta,afectacion_total_o_riesgo_fisico,costa,Daule,WhatsApp,ama de casa,,0,no,informal,normal,,media
+1306,WIFI_EQUIPO,baja,sin_agravante,costa,Machala,Formulario web,estudiante de colegio que rinde exámenes en línea,,5,no,muy_informal,normal,,media
+1307,SIN_SERVICIO,alta,afectacion_total_o_riesgo_fisico,sierra,Riobamba,WhatsApp,inquilino que comparte el servicio con otras familias,,1,si,informal,normal,,media
+1308,DANO_FISICO_RED,alta,afectacion_total_o_riesgo_fisico,costa,Daule,WhatsApp,ama de casa,,7,no,informal,normal,,media
+1309,CANCELACION_TRASLADO_PLAN,baja,sin_afectacion_tecnica,costa,La Libertad,Llamada transcrita,emprendedora que vende por redes sociales,negocio,4,no,informal,normal,,media
+1310,INTERMITENCIA,media,degradacion_parcial,costa,Santo Domingo,Llamada transcrita,trabajador que llega de noche y usa streaming,,1,no,informal,normal,,corta
+1311,AGENDAMIENTO_VISITA,media,sin_agravante,costa,Manta,Redes sociales,cliente nuevo,,2,no,con_errores,ambigua,WIFI_EQUIPO,corta
+1312,INTERMITENCIA,media,degradacion_parcial,costa,Daule,Redes sociales,estudiante de colegio que rinde exámenes en línea,estudios,0,no,informal,ambigua,VELOCIDAD_LENTA,media
+1313,WIFI_EQUIPO,baja,sin_agravante,sierra,Loja,Llamada transcrita,persona que vive en una zona rural o periférica,,10,no,informal,dos_problemas,AGENDAMIENTO_VISITA,corta
+1314,FACTURACION,media,reclamo_economico,costa,Durán,Llamada transcrita,migrante retornado que se comunica con familia en el exterior,,5,no,muy_informal,normal,,media
+1315,AGENDAMIENTO_VISITA,media,sin_agravante,costa,Machala,Correo,ama de casa,,2,no,muy_informal,dos_problemas,VELOCIDAD_LENTA,larga
+1316,VELOCIDAD_LENTA,media,degradacion_parcial,sierra,Ambato,Formulario web,estudiante de colegio que rinde exámenes en línea,estudios,0,no,con_errores,ambigua,INSTALACION,corta
+1317,ATENCION_CLIENTE,baja,sin_afectacion_tecnica,costa,Salinas,WhatsApp,adulto mayor que vive solo,salud,0,no,con_errores,normal,,media
+1318,INTERMITENCIA,media,degradacion_parcial,costa,Milagro,Formulario web,persona que trabaja desde casa (teletrabajo),,1,no,con_errores,normal,,larga
+1319,INTERMITENCIA,alta,dependencia_critica,costa,Guayaquil,Redes sociales,dueña de una tienda que cobra por transferencia,negocio,0,no,informal,normal,,corta
+1320,FACTURACION,media,reclamo_economico,costa,Santo Domingo,Redes sociales,adulto mayor que vive solo,salud,0,no,con_errores,normal,,media
+1321,SIN_SERVICIO,alta,afectacion_total_o_riesgo_fisico,amazonia,Nueva Loja,Formulario web,profesional que paga puntual y está molesto,,1,si,informal,normal,,media
+1322,VELOCIDAD_LENTA,media,degradacion_parcial,costa,Machala,Redes sociales,estudiante de colegio que rinde exámenes en línea,estudios,1,no,informal,normal,,media
+1323,AGENDAMIENTO_VISITA,media,sin_agravante,sierra,Quito,Correo,jubilado con poca experiencia en tecnología,,2,no,informal,normal,,larga
+1324,ATENCION_CLIENTE,baja,sin_afectacion_tecnica,sierra,Tulcán,Llamada transcrita,adulto mayor que vive solo,,1,no,informal,normal,,media
+1325,INTERMITENCIA,alta,dependencia_critica,sierra,Ibarra,Formulario web,persona que trabaja desde casa (teletrabajo),teletrabajo,1,no,con_errores,normal,,media
+1326,ATENCION_CLIENTE,baja,sin_afectacion_tecnica,sierra,Ambato,Llamada transcrita,inquilino que comparte el servicio con otras familias,,4,no,mezcla_kichwa,normal,,media
+1327,FACTURACION,media,reclamo_economico,sierra,Loja,WhatsApp,inquilino que comparte el servicio con otras familias,,4,no,informal,dos_problemas,INTERMITENCIA,media
+1328,INTERMITENCIA,alta,reincidencia,costa,Portoviejo,Llamada transcrita,estudiante de colegio que rinde exámenes en línea,estudios,1,si,informal,ambigua,INSTALACION,media
+1329,DANO_FISICO_RED,alta,afectacion_total_o_riesgo_fisico,costa,Babahoyo,Llamada transcrita,migrante retornado que se comunica con familia en el exterior,,7,si,formal,normal,,larga
+1330,INTERMITENCIA,media,degradacion_parcial,sierra,Riobamba,Correo,jubilado con poca experiencia en tecnología,,0,no,muy_informal,normal,,media
+1331,AGENDAMIENTO_VISITA,media,sin_agravante,sierra,Sangolquí,WhatsApp,inquilino que comparte el servicio con otras familias,,1,no,con_errores,dos_problemas,CANCELACION_TRASLADO_PLAN,corta
+1333,ATENCION_CLIENTE,baja,sin_afectacion_tecnica,sierra,Riobamba,WhatsApp,ama de casa,,1,no,mezcla_kichwa,normal,,corta
+1334,VELOCIDAD_LENTA,alta,mas_de_4_dias,costa,La Libertad,Redes sociales,inquilino que comparte el servicio con otras familias,,10,no,formal,ambigua,SIN_SERVICIO,larga
+1335,SIN_SERVICIO,alta,afectacion_total_o_riesgo_fisico,sierra,Sangolquí,App,madre de familia con hijos en clases virtuales,estudios,10,no,con_errores,normal,,media
+1336,INTERMITENCIA,media,degradacion_parcial,sierra,Tulcán,WhatsApp,emprendedora que vende por redes sociales,,1,no,informal,dos_problemas,CANCELACION_TRASLADO_PLAN,corta
+1337,WIFI_EQUIPO,media,reincidencia,sierra,Quito,App,cliente antiguo de varios años,,0,si,informal,normal,,media
+1338,INSTALACION,media,sin_agravante,sierra,Ibarra,Formulario web,cliente nuevo,,0,no,muy_informal,normal,,media
+1339,VELOCIDAD_LENTA,media,degradacion_parcial,sierra,Cuenca,Correo,inquilino que comparte el servicio con otras familias,,1,no,informal,ambigua,CANCELACION_TRASLADO_PLAN,media
+1340,DANO_FISICO_RED,alta,afectacion_total_o_riesgo_fisico,sierra,Guaranda,App,adulto mayor que vive solo,salud,0,si,formal,normal,,media
+1342,INSTALACION,media,sin_agravante,costa,Samborondón,Correo,persona que vive en una zona rural o periférica,,1,no,formal,normal,,media
+1343,SIN_SERVICIO,alta,afectacion_total_o_riesgo_fisico,costa,Machala,Llamada transcrita,cliente nuevo,,1,no,informal,normal,,media
+1344,VELOCIDAD_LENTA,media,degradacion_parcial,costa,Milagro,WhatsApp,ama de casa,,0,no,formal,normal,,corta
+1346,INSTALACION,media,sin_agravante,costa,Machala,WhatsApp,adulto mayor que vive solo,salud,4,no,informal,normal,,media
+1347,SIN_SERVICIO,alta,afectacion_total_o_riesgo_fisico,sierra,Guaranda,WhatsApp,migrante retornado que se comunica con familia en el exterior,,7,no,informal,ambigua,INTERMITENCIA,larga
+1348,AGENDAMIENTO_VISITA,media,sin_agravante,costa,Durán,Redes sociales,persona con un familiar con equipo médico o teleconsultas,salud,0,no,informal,normal,,larga
+1349,ATENCION_CLIENTE,baja,sin_afectacion_tecnica,sierra,Ambato,Correo,adulto mayor que vive solo,,10,no,informal,normal,,media
+1350,FACTURACION,media,reclamo_economico,amazonia,Puyo,WhatsApp,ama de casa,,1,si,informal,normal,,larga
+1351,SIN_SERVICIO,alta,afectacion_total_o_riesgo_fisico,amazonia,Zamora,Llamada transcrita,dueño de un cyber o centro de copiado,negocio,2,no,muy_informal,normal,,media
+1352,SIN_SERVICIO,alta,afectacion_total_o_riesgo_fisico,costa,Esmeraldas,WhatsApp,estudiante universitario con clases virtuales,estudios,1,no,muy_informal,ambigua,AGENDAMIENTO_VISITA,larga
+1354,CANCELACION_TRASLADO_PLAN,baja,sin_afectacion_tecnica,sierra,Sangolquí,WhatsApp,cliente antiguo de varios años,,0,no,muy_informal,normal,,corta
+1355,INTERMITENCIA,alta,dependencia_critica,sierra,Ambato,WhatsApp,hijo que cuida a su madre adulta mayor que hace videollamadas médicas,salud,10,no,muy_informal,normal,,media
+1356,FACTURACION,media,reclamo_economico,sierra,Ibarra,WhatsApp,cliente nuevo,,7,si,con_errores,normal,,corta
+1357,INTERMITENCIA,alta,mas_de_4_dias,costa,Durán,WhatsApp,profesional que paga puntual y está molesto,,10,no,formal,normal,,media
+1358,SIN_SERVICIO,alta,afectacion_total_o_riesgo_fisico,costa,Machala,Llamada transcrita,dueña de una tienda que cobra por transferencia,,1,no,muy_informal,normal,,media
+1359,WIFI_EQUIPO,baja,sin_agravante,costa,Guayaquil,WhatsApp,estudiante universitario con clases virtuales,estudios,1,no,formal,dos_problemas,INTERMITENCIA,media
+1360,CANCELACION_TRASLADO_PLAN,baja,sin_afectacion_tecnica,costa,Esmeraldas,Redes sociales,profesional que paga puntual y está molesto,,5,no,informal,normal,,media
+1361,VELOCIDAD_LENTA,media,degradacion_parcial,costa,Portoviejo,Redes sociales,persona que vive en una zona rural o periférica,,3,no,informal,ambigua,DANO_FISICO_RED,media
+1362,INSTALACION,media,sin_agravante,amazonia,Coca,Llamada transcrita,inquilino que comparte el servicio con otras familias,,10,no,muy_informal,normal,,corta
+1363,SIN_SERVICIO,alta,afectacion_total_o_riesgo_fisico,costa,Machala,Llamada transcrita,joven gamer,,3,no,informal,normal,,media
+1365,CANCELACION_TRASLADO_PLAN,baja,sin_afectacion_tecnica,costa,Samborondón,Correo,adulto mayor que vive solo,salud,4,si,informal,ambigua,FACTURACION,larga
+1366,INTERMITENCIA,alta,dependencia_critica,costa,Milagro,WhatsApp,dueño de un cyber o centro de copiado,negocio,3,no,con_errores,normal,,media
+1367,FACTURACION,media,reclamo_economico,costa,Esmeraldas,Llamada transcrita,dueño de un cyber o centro de copiado,negocio,3,no,informal,normal,,corta
+1368,VELOCIDAD_LENTA,media,degradacion_parcial,costa,Babahoyo,WhatsApp,cliente antiguo de varios años,,2,no,muy_informal,normal,,media
+1369,AGENDAMIENTO_VISITA,media,sin_agravante,sierra,Riobamba,WhatsApp,cliente antiguo de varios años,,3,no,formal,normal,,media
+1370,FACTURACION,media,reclamo_economico,sierra,Sangolquí,WhatsApp,inquilino que comparte el servicio con otras familias,,1,no,formal,normal,,media
+1371,SIN_SERVICIO,alta,afectacion_total_o_riesgo_fisico,costa,Samborondón,Llamada transcrita,estudiante universitario con clases virtuales,,5,no,muy_informal,normal,,larga
+1373,VELOCIDAD_LENTA,alta,mas_de_4_dias,costa,Manta,App,inquilino que comparte el servicio con otras familias,,5,no,informal,dos_problemas,CANCELACION_TRASLADO_PLAN,larga
+1374,VELOCIDAD_LENTA,alta,mas_de_4_dias,costa,Salinas,Llamada transcrita,persona que trabaja desde casa (teletrabajo),,10,no,muy_informal,normal,,media
+1375,SIN_SERVICIO,alta,afectacion_total_o_riesgo_fisico,sierra,Sangolquí,Llamada transcrita,hijo que cuida a su madre adulta mayor que hace videollamadas médicas,salud,0,no,informal,normal,,larga
+1376,DANO_FISICO_RED,alta,afectacion_total_o_riesgo_fisico,sierra,Guaranda,App,emprendedora que vende por redes sociales,negocio,1,si,informal,normal,,media
+1377,ATENCION_CLIENTE,baja,sin_afectacion_tecnica,costa,Milagro,WhatsApp,adulto mayor que vive solo,,2,no,informal,ambigua,SIN_SERVICIO,media
+1380,AGENDAMIENTO_VISITA,media,sin_agravante,costa,Quevedo,WhatsApp,estudiante universitario con clases virtuales,estudios,7,no,muy_informal,normal,,corta
+1381,FACTURACION,media,reclamo_economico,sierra,Otavalo,WhatsApp,estudiante universitario con clases virtuales,,2,si,informal,normal,,media
+1382,FACTURACION,media,reclamo_economico,sierra,Sangolquí,WhatsApp,persona con un familiar con equipo médico o teleconsultas,,10,no,con_errores,normal,,media
+1384,INTERMITENCIA,alta,reincidencia,sierra,Loja,Llamada transcrita,ama de casa,,0,si,informal,normal,,media
+1385,WIFI_EQUIPO,baja,sin_agravante,costa,Samborondón,WhatsApp,madre de familia con hijos en clases virtuales,estudios,1,no,muy_informal,normal,,corta
+1386,FACTURACION,media,reclamo_economico,sierra,Ambato,WhatsApp,madre de familia con hijos en clases virtuales,,3,no,muy_informal,normal,,media
+1388,FACTURACION,media,reclamo_economico,sierra,Cuenca,Redes sociales,madre de familia con hijos en clases virtuales,estudios,7,si,informal,normal,,larga
+1389,ATENCION_CLIENTE,baja,sin_afectacion_tecnica,sierra,Ibarra,WhatsApp,estudiante de colegio que rinde exámenes en línea,,0,si,formal,normal,,larga
+1390,DANO_FISICO_RED,alta,afectacion_total_o_riesgo_fisico,costa,Daule,Redes sociales,persona que trabaja desde casa (teletrabajo),,2,no,informal,normal,,media
+1391,INTERMITENCIA,alta,dependencia_critica,costa,Milagro,WhatsApp,adulto mayor que vive solo,salud,10,no,informal,normal,,media
+1392,SIN_SERVICIO,alta,afectacion_total_o_riesgo_fisico,costa,Salinas,Redes sociales,profesional que paga puntual y está molesto,,1,si,muy_informal,normal,,corta
+1393,SIN_SERVICIO,alta,afectacion_total_o_riesgo_fisico,amazonia,Zamora,Formulario web,persona que trabaja desde casa (teletrabajo),,3,no,informal,normal,,media
+1395,VELOCIDAD_LENTA,alta,dependencia_critica,costa,Daule,Llamada transcrita,dueño de un cyber o centro de copiado,negocio,2,no,informal,normal,,media
+1399,FACTURACION,media,reclamo_economico,costa,Babahoyo,App,estudiante universitario con clases virtuales,estudios,1,si,informal,ambigua,ATENCION_CLIENTE,media
+1400,AGENDAMIENTO_VISITA,media,sin_agravante,sierra,Latacunga,App,jubilado con poca experiencia en tecnología,,1,no,informal,normal,,larga
+1401,INSTALACION,media,sin_agravante,amazonia,Tena,App,estudiante universitario con clases virtuales,estudios,3,no,formal,normal,,media
+1402,AGENDAMIENTO_VISITA,alta,reincidencia,amazonia,Coca,WhatsApp,hijo que cuida a su madre adulta mayor que hace videollamadas médicas,,5,si,informal,normal,,media
+1403,VELOCIDAD_LENTA,media,degradacion_parcial,costa,La Libertad,Llamada transcrita,estudiante de colegio que rinde exámenes en línea,,0,no,informal,normal,,media
+1404,DANO_FISICO_RED,alta,afectacion_total_o_riesgo_fisico,amazonia,Nueva Loja,Formulario web,persona que vive en una zona rural o periférica,,4,no,formal,normal,,corta
+1405,WIFI_EQUIPO,media,dependencia_critica,costa,La Libertad,WhatsApp,persona con un familiar con equipo médico o teleconsultas,salud,0,no,informal,normal,,corta
+1406,ATENCION_CLIENTE,baja,sin_afectacion_tecnica,costa,Salinas,WhatsApp,cliente nuevo,,2,si,muy_informal,normal,,media
+1407,VELOCIDAD_LENTA,media,degradacion_parcial,costa,Durán,Llamada transcrita,cliente antiguo de varios años,,1,no,muy_informal,ambigua,INTERMITENCIA,larga
+1408,AGENDAMIENTO_VISITA,media,sin_agravante,costa,Daule,Redes sociales,migrante retornado que se comunica con familia en el exterior,,0,no,con_errores,normal,,media
+1411,FACTURACION,media,reclamo_economico,sierra,Ambato,WhatsApp,estudiante universitario con clases virtuales,,3,no,informal,normal,,media
+1412,INSTALACION,media,sin_agravante,costa,Machala,WhatsApp,dueño de un cyber o centro de copiado,,4,no,informal,normal,,larga
+1413,SIN_SERVICIO,alta,afectacion_total_o_riesgo_fisico,amazonia,Macas,WhatsApp,persona con un familiar con equipo médico o teleconsultas,salud,0,si,informal,normal,,corta
+1415,FACTURACION,media,reclamo_economico,costa,Milagro,App,profesional que paga puntual y está molesto,,1,no,informal,dos_problemas,ATENCION_CLIENTE,corta
+1416,INTERMITENCIA,media,degradacion_parcial,sierra,Otavalo,WhatsApp,trabajador que llega de noche y usa streaming,,2,no,con_errores,ambigua,VELOCIDAD_LENTA,media
+1417,FACTURACION,media,reclamo_economico,sierra,Latacunga,Llamada transcrita,emprendedora que vende por redes sociales,,7,si,muy_informal,normal,,media
+1418,FACTURACION,media,reclamo_economico,costa,Quevedo,WhatsApp,persona que trabaja desde casa (teletrabajo),teletrabajo,1,si,con_errores,dos_problemas,SIN_SERVICIO,corta
+1419,INSTALACION,media,sin_agravante,costa,Samborondón,App,migrante retornado que se comunica con familia en el exterior,,0,no,muy_informal,ambigua,VELOCIDAD_LENTA,media
+1420,CANCELACION_TRASLADO_PLAN,baja,sin_afectacion_tecnica,costa,Manta,Redes sociales,emprendedora que vende por redes sociales,negocio,2,no,muy_informal,normal,,larga
+1421,DANO_FISICO_RED,alta,afectacion_total_o_riesgo_fisico,sierra,Ambato,WhatsApp,madre de familia con hijos en clases virtuales,,4,no,formal,dos_problemas,CANCELACION_TRASLADO_PLAN,media
+1422,AGENDAMIENTO_VISITA,media,sin_agravante,sierra,Azogues,Llamada transcrita,persona con un familiar con equipo médico o teleconsultas,salud,7,no,con_errores,normal,,media
+1423,SIN_SERVICIO,alta,afectacion_total_o_riesgo_fisico,sierra,Quito,App,inquilino que comparte el servicio con otras familias,,1,no,informal,normal,,media
+1424,INTERMITENCIA,alta,dependencia_critica,sierra,Cayambe,Llamada transcrita,adulto mayor que vive solo,salud,2,no,informal,normal,,media
+1426,ATENCION_CLIENTE,baja,sin_afectacion_tecnica,costa,Daule,App,profesional que paga puntual y está molesto,,3,no,informal,normal,,media
+1427,SIN_SERVICIO,alta,afectacion_total_o_riesgo_fisico,sierra,Tulcán,Redes sociales,persona con un familiar con equipo médico o teleconsultas,,0,si,muy_informal,ambigua,VELOCIDAD_LENTA,larga
+1428,AGENDAMIENTO_VISITA,media,sin_agravante,costa,Manta,WhatsApp,trabajador que llega de noche y usa streaming,,7,no,informal,normal,,larga
+1429,AGENDAMIENTO_VISITA,media,sin_agravante,sierra,Loja,Redes sociales,cliente nuevo,,0,no,muy_informal,normal,,media
+1430,FACTURACION,media,reclamo_economico,costa,Machala,Correo,persona que vive en una zona rural o periférica,,2,no,muy_informal,normal,,media
+1431,ATENCION_CLIENTE,baja,sin_afectacion_tecnica,costa,Guayaquil,App,cliente nuevo,,0,si,informal,normal,,media
+1432,FACTURACION,media,reclamo_economico,costa,Guayaquil,Correo,jubilado con poca experiencia en tecnología,,3,no,con_errores,normal,,media
+1433,VELOCIDAD_LENTA,media,degradacion_parcial,costa,Samborondón,WhatsApp,estudiante de colegio que rinde exámenes en línea,,1,no,formal,normal,,corta
+1434,AGENDAMIENTO_VISITA,alta,reincidencia,costa,Samborondón,Correo,joven gamer,,3,si,informal,ambigua,INSTALACION,corta
+1435,WIFI_EQUIPO,baja,sin_agravante,costa,Guayaquil,Redes sociales,persona que vive en una zona rural o periférica,,4,no,formal,normal,,media
+1436,CANCELACION_TRASLADO_PLAN,baja,sin_afectacion_tecnica,sierra,Quito,Llamada transcrita,cliente antiguo de varios años,,1,no,informal,normal,,larga
+1437,ATENCION_CLIENTE,baja,sin_afectacion_tecnica,costa,Esmeraldas,Formulario web,trabajador que llega de noche y usa streaming,,0,no,muy_informal,dos_problemas,WIFI_EQUIPO,media
+1438,AGENDAMIENTO_VISITA,alta,reincidencia,costa,Esmeraldas,WhatsApp,emprendedora que vende por redes sociales,negocio,5,si,con_errores,normal,,media
+1440,SIN_SERVICIO,alta,afectacion_total_o_riesgo_fisico,sierra,Riobamba,Formulario web,madre de familia con hijos en clases virtuales,estudios,4,no,muy_informal,normal,,media
+1441,AGENDAMIENTO_VISITA,media,sin_agravante,costa,Esmeraldas,Redes sociales,cliente antiguo de varios años,,3,no,muy_informal,normal,,media
+1443,ATENCION_CLIENTE,baja,sin_afectacion_tecnica,sierra,Riobamba,Llamada transcrita,persona que trabaja desde casa (teletrabajo),,0,no,formal,ambigua,DANO_FISICO_RED,media
+1444,WIFI_EQUIPO,baja,sin_agravante,sierra,Cayambe,Correo,persona que vive en una zona rural o periférica,,1,no,con_errores,normal,,corta
+1445,SIN_SERVICIO,alta,afectacion_total_o_riesgo_fisico,sierra,Sangolquí,Llamada transcrita,inquilino que comparte el servicio con otras familias,,3,no,con_errores,dos_problemas,AGENDAMIENTO_VISITA,media
+1446,FACTURACION,media,reclamo_economico,sierra,Tulcán,App,adulto mayor que vive solo,salud,5,no,informal,normal,,media
+1447,FACTURACION,media,reclamo_economico,sierra,Tulcán,Correo,cliente antiguo de varios años,,1,no,informal,normal,,media
+1448,WIFI_EQUIPO,baja,sin_agravante,costa,Portoviejo,WhatsApp,ama de casa,,1,no,informal,normal,,corta
+1449,WIFI_EQUIPO,baja,sin_agravante,sierra,Otavalo,Redes sociales,migrante retornado que se comunica con familia en el exterior,,5,no,muy_informal,ambigua,SIN_SERVICIO,media
+1450,SIN_SERVICIO,alta,afectacion_total_o_riesgo_fisico,sierra,Cuenca,WhatsApp,cliente antiguo de varios años,,1,no,informal,normal,,media
+1451,VELOCIDAD_LENTA,alta,dependencia_critica,costa,Guayaquil,Llamada transcrita,dueña de una tienda que cobra por transferencia,negocio,4,no,informal,normal,,media
+1453,CANCELACION_TRASLADO_PLAN,baja,sin_afectacion_tecnica,sierra,Quito,WhatsApp,inquilino que comparte el servicio con otras familias,,4,no,informal,ambigua,FACTURACION,corta
+1454,INSTALACION,media,sin_agravante,costa,Santo Domingo,Redes sociales,persona con un familiar con equipo médico o teleconsultas,salud,7,no,muy_informal,normal,,corta
+1455,INTERMITENCIA,media,degradacion_parcial,sierra,Sangolquí,WhatsApp,migrante retornado que se comunica con familia en el exterior,,0,no,informal,normal,,corta
+1456,FACTURACION,media,reclamo_economico,amazonia,Zamora,WhatsApp,jubilado con poca experiencia en tecnología,,1,no,informal,normal,,media
+1458,VELOCIDAD_LENTA,alta,mas_de_4_dias,sierra,Quito,Llamada transcrita,inquilino que comparte el servicio con otras familias,,5,no,informal,normal,,media
+1459,AGENDAMIENTO_VISITA,media,sin_agravante,amazonia,Puyo,Formulario web,emprendedora que vende por redes sociales,,0,no,muy_informal,ambigua,CANCELACION_TRASLADO_PLAN,larga
+1460,ATENCION_CLIENTE,baja,sin_afectacion_tecnica,sierra,Quito,Llamada transcrita,cliente antiguo de varios años,,1,si,muy_informal,normal,,corta
+1461,SIN_SERVICIO,alta,afectacion_total_o_riesgo_fisico,sierra,Riobamba,WhatsApp,dueño de un cyber o centro de copiado,,1,no,informal,normal,,media
+1462,WIFI_EQUIPO,baja,sin_agravante,sierra,Riobamba,Llamada transcrita,madre de familia con hijos en clases virtuales,estudios,2,no,informal,normal,,media
+1464,INSTALACION,media,sin_agravante,costa,Quevedo,Llamada transcrita,joven gamer,,4,no,informal,normal,,media
+1465,AGENDAMIENTO_VISITA,media,sin_agravante,sierra,Sangolquí,WhatsApp,adulto mayor que vive solo,salud,2,no,informal,normal,,larga
+1467,WIFI_EQUIPO,baja,sin_agravante,costa,Samborondón,Formulario web,estudiante universitario con clases virtuales,,1,no,formal,normal,,media
+1468,WIFI_EQUIPO,baja,sin_agravante,costa,Guayaquil,Correo,estudiante universitario con clases virtuales,estudios,4,no,muy_informal,normal,,media
+1470,WIFI_EQUIPO,media,dependencia_critica,costa,Quevedo,WhatsApp,hijo que cuida a su madre adulta mayor que hace videollamadas médicas,salud,10,no,muy_informal,normal,,media
+1471,INTERMITENCIA,alta,reincidencia,costa,Milagro,Llamada transcrita,ama de casa,,4,si,muy_informal,normal,,media
+1473,DANO_FISICO_RED,alta,afectacion_total_o_riesgo_fisico,amazonia,Tena,WhatsApp,trabajador que llega de noche y usa streaming,,1,no,formal,ambigua,INSTALACION,larga
+1474,FACTURACION,media,reclamo_economico,sierra,Cuenca,Llamada transcrita,estudiante universitario con clases virtuales,estudios,2,no,muy_informal,normal,,corta
+1476,SIN_SERVICIO,alta,afectacion_total_o_riesgo_fisico,amazonia,Puyo,Redes sociales,jubilado con poca experiencia en tecnología,,1,no,informal,ambigua,CANCELACION_TRASLADO_PLAN,media
+1478,SIN_SERVICIO,alta,afectacion_total_o_riesgo_fisico,sierra,Latacunga,Redes sociales,persona que vive en una zona rural o periférica,,2,si,mezcla_kichwa,normal,,larga
+1479,VELOCIDAD_LENTA,media,degradacion_parcial,sierra,Ambato,Llamada transcrita,ama de casa,,1,no,con_errores,normal,,media
+1480,SIN_SERVICIO,alta,afectacion_total_o_riesgo_fisico,amazonia,Coca,Llamada transcrita,estudiante universitario con clases virtuales,,5,no,formal,normal,,media
+1482,INSTALACION,media,sin_agravante,costa,Machala,WhatsApp,emprendedora que vende por redes sociales,,1,no,con_errores,normal,,media
+1483,SIN_SERVICIO,alta,afectacion_total_o_riesgo_fisico,sierra,Quito,Formulario web,cliente nuevo,,4,no,informal,normal,,larga
+1484,VELOCIDAD_LENTA,alta,mas_de_4_dias,costa,Esmeraldas,WhatsApp,dueño de un cyber o centro de copiado,,10,si,informal,dos_problemas,WIFI_EQUIPO,media
+1485,FACTURACION,media,reclamo_economico,costa,Machala,Correo,joven gamer,,2,no,con_errores,normal,,corta
+1486,ATENCION_CLIENTE,baja,sin_afectacion_tecnica,costa,Milagro,Formulario web,profesional que paga puntual y está molesto,,1,no,muy_informal,normal,,larga
+1487,AGENDAMIENTO_VISITA,media,sin_agravante,sierra,Ibarra,Correo,dueño de un cyber o centro de copiado,negocio,0,no,formal,normal,,media
+1488,AGENDAMIENTO_VISITA,media,sin_agravante,sierra,Cayambe,WhatsApp,cliente nuevo,,1,no,mezcla_kichwa,normal,,corta
+1489,ATENCION_CLIENTE,baja,sin_afectacion_tecnica,sierra,Guaranda,App,dueño de un cyber o centro de copiado,negocio,7,no,informal,normal,,media
+1490,FACTURACION,media,reclamo_economico,sierra,Guaranda,Llamada transcrita,estudiante de colegio que rinde exámenes en línea,,10,no,informal,normal,,larga
+1491,ATENCION_CLIENTE,baja,sin_afectacion_tecnica,costa,Durán,Redes sociales,estudiante universitario con clases virtuales,,1,no,con_errores,normal,,larga
+1492,INSTALACION,alta,reincidencia,costa,Guayaquil,Correo,madre de familia con hijos en clases virtuales,,1,si,formal,normal,,media
+1493,INSTALACION,media,sin_agravante,costa,Samborondón,WhatsApp,persona con un familiar con equipo médico o teleconsultas,salud,10,no,informal,dos_problemas,VELOCIDAD_LENTA,media
+1494,INTERMITENCIA,media,degradacion_parcial,sierra,Sangolquí,Redes sociales,jubilado con poca experiencia en tecnología,,3,no,formal,normal,,media
+1495,SIN_SERVICIO,alta,afectacion_total_o_riesgo_fisico,costa,Manta,Correo,profesional que paga puntual y está molesto,,1,no,muy_informal,normal,,media
+1496,INSTALACION,media,sin_agravante,costa,Daule,Llamada transcrita,profesional que paga puntual y está molesto,,5,no,con_errores,normal,,media
+1497,AGENDAMIENTO_VISITA,alta,reincidencia,costa,Santo Domingo,WhatsApp,migrante retornado que se comunica con familia en el exterior,,7,si,muy_informal,normal,,media
+1498,AGENDAMIENTO_VISITA,media,sin_agravante,amazonia,Puyo,WhatsApp,persona con un familiar con equipo médico o teleconsultas,salud,0,no,informal,normal,,corta
+1499,VELOCIDAD_LENTA,media,degradacion_parcial,costa,Babahoyo,WhatsApp,estudiante de colegio que rinde exámenes en línea,,2,no,informal,ambigua,CANCELACION_TRASLADO_PLAN,media
+1500,SIN_SERVICIO,alta,afectacion_total_o_riesgo_fisico,costa,Portoviejo,WhatsApp,inquilino que comparte el servicio con otras familias,,0,si,informal,normal,,corta
