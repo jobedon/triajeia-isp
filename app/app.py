@@ -306,6 +306,8 @@ def main() -> None:
 
     @st.cache_resource(show_spinner=False)
     def conectar_bd():
+        if _hay_secretos(st) and st.secrets.get("ip_sal"):
+            os.environ["TRIAJEIA_SAL"] = str(st.secrets["ip_sal"])   # clave fija: el código de IP no cambia al reiniciar
         m = conectar(st.secrets.get("db_url") if _hay_secretos(st) else None)
         purgar(m)
         return m

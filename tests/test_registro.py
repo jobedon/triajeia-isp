@@ -4,7 +4,7 @@ from datetime import datetime, timedelta, timezone
 import pytest
 from sqlalchemy import update
 
-from src.registro import anonimizar, clasificaciones, codigo_ip, conectar, leer, purgar, registrar, registrar_decision
+from src.registro import normalizar_url, anonimizar, clasificaciones, codigo_ip, conectar, leer, purgar, registrar, registrar_decision
 
 RES = {"categoria": {"etiqueta": "SIN_SERVICIO", "probabilidad": 0.97}, "area_atencion": "SOPORTE_TECNICO",
        "prioridad": {"etiqueta": "alta", "probabilidad": 0.9}, "requiere_revision_humana": False}
@@ -44,3 +44,10 @@ def test_registrar_decidir_y_purgar(tmp_path):
         c.execute(update(clasificaciones).where(clasificaciones.c.id == j).values(fecha_hora=viejo))
     assert purgar(motor, dias=30) == 1
     assert list(leer(motor)["id"]) == [i]
+
+
+def test_normalizar_url_de_neon():
+    neon = "postgresql://usuario:clave@ep-xyz.us-east-2.aws.neon.tech/neondb?sslmode=require"
+    assert normalizar_url(neon).startswith("postgresql+psycopg://usuario:clave@ep-xyz")
+    assert normalizar_url("postgres://a@b/c") == "postgresql+psycopg://a@b/c"
+    assert normalizar_url("sqlite:///x.db") == "sqlite:///x.db"

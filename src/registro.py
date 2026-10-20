@@ -82,9 +82,20 @@ def codigo_ip(ip: str | None, sal: str | None = None) -> str:
     return "ip_" + hashlib.sha256(((sal or _sal()) + ip).encode()).hexdigest()[:6]
 
 
+def normalizar_url(url: str) -> str:
+    """Acepta la cadena de conexión tal como la entrega Neon u otro proveedor de PostgreSQL.
+
+    «postgresql://…» o «postgres://…» se convierten a «postgresql+psycopg://…» (controlador psycopg 3).
+    """
+    for prefijo in ("postgresql://", "postgres://"):
+        if url.startswith(prefijo):
+            return "postgresql+psycopg://" + url.removeprefix(prefijo)
+    return url
+
+
 def conectar(url: str | None = None) -> Engine:
     """Crea la conexión y la tabla si no existe."""
-    url = url or os.environ.get("TRIAJEIA_DB_URL") or URL_POR_DEFECTO
+    url = normalizar_url(url or os.environ.get("TRIAJEIA_DB_URL") or URL_POR_DEFECTO)
     if url.startswith("sqlite:///"):
         Path(url.removeprefix("sqlite:///")).parent.mkdir(parents=True, exist_ok=True)
     motor = create_engine(url, pool_pre_ping=True)
