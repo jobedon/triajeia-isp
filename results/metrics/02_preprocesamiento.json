@@ -1,0 +1,10 @@
+{
+  "n": {
+    "train": 1105,
+    "val": 195,
+    "test": 200
+  },
+  "duplicados_exactos": 0,
+  "jaccard_max_test_vs_train": 0.42857142857142855,
+  "textos_modificados": 226
+}

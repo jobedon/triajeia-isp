@@ -1,0 +1,64 @@
+{
+  "n": 1500,
+  "por_conjunto": {
+    "entrenamiento": 1300,
+    "prueba": 200
+  },
+  "categoria": {
+    "SIN_SERVICIO": 255,
+    "INTERMITENCIA": 210,
+    "VELOCIDAD_LENTA": 195,
+    "WIFI_EQUIPO": 180,
+    "FACTURACION": 165,
+    "AGENDAMIENTO_VISITA": 120,
+    "ATENCION_CLIENTE": 105,
+    "INSTALACION": 105,
+    "DANO_FISICO_RED": 90,
+    "CANCELACION_TRASLADO_PLAN": 75
+  },
+  "prioridad": {
+    "media": 609,
+    "alta": 592,
+    "baja": 299
+  },
+  "desbalance_categorias": 3.4,
+  "palabras": {
+    "count": 1500.0,
+    "mean": 35.2,
+    "std": 18.63,
+    "min": 8.0,
+    "25%": 15.0,
+    "50%": 34.0,
+    "75%": 42.0,
+    "max": 85.0
+  },
+  "n_prueba_por_subgrupo": {
+    "registro": {
+      "informal": 89,
+      "muy_informal": 43,
+      "con_errores": 32,
+      "formal": 31,
+      "mezcla_kichwa": 5
+    },
+    "region": {
+      "sierra": 93,
+      "costa": 93,
+      "amazonia": 14
+    },
+    "canal": {
+      "WhatsApp": 64,
+      "Llamada transcrita": 45,
+      "Redes sociales": 27,
+      "Correo": 25,
+      "Formulario web": 21,
+      "App": 18
+    }
+  },
+  "categorias_prioridad_fija": [
+    "ATENCION_CLIENTE",
+    "CANCELACION_TRASLADO_PLAN",
+    "DANO_FISICO_RED",
+    "FACTURACION",
+    "SIN_SERVICIO"
+  ]
+}

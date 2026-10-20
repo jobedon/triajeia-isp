@@ -1,0 +1,554 @@
+{
+  "metricas_val": {
+    "categoria": {
+      "dummy_mayoritaria": {
+        "exactitud": 0.16923076923076924,
+        "f1_macro": 0.02894736842105263,
+        "precision_macro": 0.016923076923076923,
+        "recall_macro": 0.1,
+        "por_clase": {
+          "AGENDAMIENTO_VISITA": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "n": 16
+          },
+          "ATENCION_CLIENTE": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "n": 14
+          },
+          "CANCELACION_TRASLADO_PLAN": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "n": 10
+          },
+          "DANO_FISICO_RED": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "n": 12
+          },
+          "FACTURACION": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "n": 21
+          },
+          "INSTALACION": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "n": 14
+          },
+          "INTERMITENCIA": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "n": 27
+          },
+          "SIN_SERVICIO": {
+            "precision": 0.16923076923076924,
+            "recall": 1.0,
+            "f1": 0.2894736842105263,
+            "n": 33
+          },
+          "VELOCIDAD_LENTA": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "n": 25
+          },
+          "WIFI_EQUIPO": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "n": 23
+          }
+        }
+      },
+      "dummy_estratificado": {
+        "exactitud": 0.11282051282051282,
+        "f1_macro": 0.09269546220112748,
+        "precision_macro": 0.09528571428571428,
+        "recall_macro": 0.09084681180333354,
+        "por_clase": {
+          "AGENDAMIENTO_VISITA": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "n": 16
+          },
+          "ATENCION_CLIENTE": {
+            "precision": 0.06666666666666667,
+            "recall": 0.07142857142857142,
+            "f1": 0.06896551724137931,
+            "n": 14
+          },
+          "CANCELACION_TRASLADO_PLAN": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "n": 10
+          },
+          "DANO_FISICO_RED": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "n": 12
+          },
+          "FACTURACION": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "n": 21
+          },
+          "INSTALACION": {
+            "precision": 0.14285714285714285,
+            "recall": 0.14285714285714285,
+            "f1": 0.14285714285714285,
+            "n": 14
+          },
+          "INTERMITENCIA": {
+            "precision": 0.16,
+            "recall": 0.14814814814814814,
+            "f1": 0.15384615384615385,
+            "n": 27
+          },
+          "SIN_SERVICIO": {
+            "precision": 0.19444444444444445,
+            "recall": 0.21212121212121213,
+            "f1": 0.2028985507246377,
+            "n": 33
+          },
+          "VELOCIDAD_LENTA": {
+            "precision": 0.16666666666666666,
+            "recall": 0.16,
+            "f1": 0.16326530612244897,
+            "n": 25
+          },
+          "WIFI_EQUIPO": {
+            "precision": 0.2222222222222222,
+            "recall": 0.17391304347826086,
+            "f1": 0.1951219512195122,
+            "n": 23
+          }
+        }
+      },
+      "svm": {
+        "exactitud": 0.9948717948717949,
+        "f1_macro": 0.9958169934640523,
+        "precision_macro": 0.9961538461538462,
+        "recall_macro": 0.9956521739130435,
+        "por_clase": {
+          "AGENDAMIENTO_VISITA": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "n": 16
+          },
+          "ATENCION_CLIENTE": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "n": 14
+          },
+          "CANCELACION_TRASLADO_PLAN": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "n": 10
+          },
+          "DANO_FISICO_RED": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "n": 12
+          },
+          "FACTURACION": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "n": 21
+          },
+          "INSTALACION": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "n": 14
+          },
+          "INTERMITENCIA": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "n": 27
+          },
+          "SIN_SERVICIO": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "n": 33
+          },
+          "VELOCIDAD_LENTA": {
+            "precision": 0.9615384615384616,
+            "recall": 1.0,
+            "f1": 0.9803921568627451,
+            "n": 25
+          },
+          "WIFI_EQUIPO": {
+            "precision": 1.0,
+            "recall": 0.9565217391304348,
+            "f1": 0.9777777777777777,
+            "n": 23
+          }
+        },
+        "f1_macro_train": 1.0,
+        "ic_val": [
+          0.9958169934640523,
+          0.9856377228292122,
+          1.0
+        ]
+      },
+      "xlmr": {
+        "exactitud": 0.9897435897435898,
+        "f1_macro": 0.9906207524469156,
+        "precision_macro": 0.9932126696832579,
+        "recall_macro": 0.9885093167701864,
+        "por_clase": {
+          "AGENDAMIENTO_VISITA": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "n": 16
+          },
+          "ATENCION_CLIENTE": {
+            "precision": 1.0,
+            "recall": 0.9285714285714286,
+            "f1": 0.9629629629629629,
+            "n": 14
+          },
+          "CANCELACION_TRASLADO_PLAN": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "n": 10
+          },
+          "DANO_FISICO_RED": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "n": 12
+          },
+          "FACTURACION": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "n": 21
+          },
+          "INSTALACION": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "n": 14
+          },
+          "INTERMITENCIA": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "n": 27
+          },
+          "SIN_SERVICIO": {
+            "precision": 0.9705882352941176,
+            "recall": 1.0,
+            "f1": 0.9850746268656716,
+            "n": 33
+          },
+          "VELOCIDAD_LENTA": {
+            "precision": 0.9615384615384616,
+            "recall": 1.0,
+            "f1": 0.9803921568627451,
+            "n": 25
+          },
+          "WIFI_EQUIPO": {
+            "precision": 1.0,
+            "recall": 0.9565217391304348,
+            "f1": 0.9777777777777777,
+            "n": 23
+          }
+        },
+        "ic_val": [
+          0.9906207524469156,
+          0.9743442973544072,
+          1.0
+        ]
+      }
+    },
+    "prioridad": {
+      "dummy_mayoritaria": {
+        "exactitud": 0.39487179487179486,
+        "f1_macro": 0.18872549019607843,
+        "precision_macro": 0.13162393162393163,
+        "recall_macro": 0.3333333333333333,
+        "por_clase": {
+          "alta": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "n": 81
+          },
+          "baja": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "n": 37
+          },
+          "media": {
+            "precision": 0.39487179487179486,
+            "recall": 1.0,
+            "f1": 0.5661764705882353,
+            "n": 77
+          }
+        }
+      },
+      "dummy_estratificado": {
+        "exactitud": 0.37948717948717947,
+        "f1_macro": 0.3399002063670478,
+        "precision_macro": 0.3442451743013541,
+        "recall_macro": 0.34030278474722914,
+        "por_clase": {
+          "alta": {
+            "precision": 0.42696629213483145,
+            "recall": 0.4691358024691358,
+            "f1": 0.4470588235294118,
+            "n": 81
+          },
+          "baja": {
+            "precision": 0.23076923076923078,
+            "recall": 0.16216216216216217,
+            "f1": 0.19047619047619047,
+            "n": 37
+          },
+          "media": {
+            "precision": 0.375,
+            "recall": 0.38961038961038963,
+            "f1": 0.3821656050955414,
+            "n": 77
+          }
+        }
+      },
+      "svm": {
+        "exactitud": 0.8512820512820513,
+        "f1_macro": 0.8631838183574754,
+        "precision_macro": 0.8635712635712635,
+        "recall_macro": 0.8631979743090854,
+        "por_clase": {
+          "alta": {
+            "precision": 0.8717948717948718,
+            "recall": 0.8395061728395061,
+            "f1": 0.8553459119496856,
+            "n": 81
+          },
+          "baja": {
+            "precision": 0.918918918918919,
+            "recall": 0.918918918918919,
+            "f1": 0.918918918918919,
+            "n": 37
+          },
+          "media": {
+            "precision": 0.8,
+            "recall": 0.8311688311688312,
+            "f1": 0.8152866242038217,
+            "n": 77
+          }
+        },
+        "f1_macro_train": 0.9981208050580083,
+        "ic_val": [
+          0.8631838183574754,
+          0.8121077071952795,
+          0.9085425707316752
+        ]
+      },
+      "xlmr": {
+        "exactitud": 0.8769230769230769,
+        "f1_macro": 0.8786625886485239,
+        "precision_macro": 0.8906714200831848,
+        "recall_macro": 0.8703754259309814,
+        "por_clase": {
+          "alta": {
+            "precision": 0.9090909090909091,
+            "recall": 0.8641975308641975,
+            "f1": 0.8860759493670886,
+            "n": 81
+          },
+          "baja": {
+            "precision": 0.9393939393939394,
+            "recall": 0.8378378378378378,
+            "f1": 0.8857142857142857,
+            "n": 37
+          },
+          "media": {
+            "precision": 0.8235294117647058,
+            "recall": 0.9090909090909091,
+            "f1": 0.8641975308641975,
+            "n": 77
+          }
+        },
+        "ic_val": [
+          0.8786625886485239,
+          0.8263075148091977,
+          0.9230614661349154
+        ]
+      }
+    }
+  },
+  "mcnemar_val_svm_vs_xlmr": {
+    "categoria": {
+      "solo_a": 1,
+      "solo_b": 0,
+      "chi2": 0.0,
+      "p": 1.0
+    },
+    "prioridad": {
+      "solo_a": 10,
+      "solo_b": 15,
+      "chi2": 0.64,
+      "p": 0.4237107971667936
+    }
+  },
+  "xlmr": {
+    "categoria": {
+      "clases": [
+        "AGENDAMIENTO_VISITA",
+        "ATENCION_CLIENTE",
+        "CANCELACION_TRASLADO_PLAN",
+        "DANO_FISICO_RED",
+        "FACTURACION",
+        "INSTALACION",
+        "INTERMITENCIA",
+        "SIN_SERVICIO",
+        "VELOCIDAD_LENTA",
+        "WIFI_EQUIPO"
+      ],
+      "historia": [
+        {
+          "epoca": 1,
+          "loss_train": 2.2936209542410713,
+          "f1_val": 0.0938821412505623
+        },
+        {
+          "epoca": 2,
+          "loss_train": 1.8139990670340402,
+          "f1_val": 0.6831324927405553
+        },
+        {
+          "epoca": 3,
+          "loss_train": 0.6495089394705637,
+          "f1_val": 0.9752365662676427
+        },
+        {
+          "epoca": 4,
+          "loss_train": 0.19729877199445453,
+          "f1_val": 0.9764421032094429
+        },
+        {
+          "epoca": 5,
+          "loss_train": 0.09935987336294992,
+          "f1_val": 0.9906207524469156
+        },
+        {
+          "epoca": 6,
+          "loss_train": 0.06583449499947684,
+          "f1_val": 0.9769338725962428
+        },
+        {
+          "epoca": 7,
+          "loss_train": 0.04217799050467355,
+          "f1_val": 0.9906207524469156
+        },
+        {
+          "epoca": 8,
+          "loss_train": 0.027226407187325614,
+          "f1_val": 0.9836018454280087
+        }
+      ],
+      "mejor_f1_val": 0.9906207524469156,
+      "mejor_epoca": 5,
+      "segundos": 128.75874400138855
+    },
+    "prioridad": {
+      "clases": [
+        "alta",
+        "baja",
+        "media"
+      ],
+      "historia": [
+        {
+          "epoca": 1,
+          "loss_train": 1.0460627964564733,
+          "f1_val": 0.37928240740740743
+        },
+        {
+          "epoca": 2,
+          "loss_train": 0.9714748927525112,
+          "f1_val": 0.7093594310561211
+        },
+        {
+          "epoca": 3,
+          "loss_train": 0.5803655896868024,
+          "f1_val": 0.8313580246913581
+        },
+        {
+          "epoca": 4,
+          "loss_train": 0.3708331891468593,
+          "f1_val": 0.8786625886485239
+        },
+        {
+          "epoca": 5,
+          "loss_train": 0.18879085608891077,
+          "f1_val": 0.8655002187667385
+        },
+        {
+          "epoca": 6,
+          "loss_train": 0.1829904760633196,
+          "f1_val": 0.8567411579963737
+        },
+        {
+          "epoca": 7,
+          "loss_train": 0.07685420342854091,
+          "f1_val": 0.8760102486833533
+        }
+      ],
+      "mejor_f1_val": 0.8786625886485239,
+      "mejor_epoca": 4,
+      "segundos": 103.88514876365662
+    }
+  },
+  "params_svm": {
+    "C": 0.3,
+    "palabra_ngramas": [
+      1,
+      2
+    ],
+    "caracter_ngramas": [
+      3,
+      5
+    ],
+    "min_df": 1,
+    "sublinear_tf": true,
+    "class_weight": "balanced",
+    "usar_caracteres": true,
+    "calibracion_cv": 5
+  },
+  "params_xlmr": {
+    "modelo": "FacebookAI/xlm-roberta-base",
+    "max_len": 128,
+    "lote": 16,
+    "lr": 2e-05,
+    "weight_decay": 0.01,
+    "dropout": 0.1,
+    "epocas_max": 15,
+    "paciencia": 3
+  }
+}

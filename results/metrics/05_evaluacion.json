@@ -1,0 +1,711 @@
+{
+  "umbral_abstencion": 0.59,
+  "metricas": {
+    "categoria": {
+      "exactitud": 0.985,
+      "f1_macro": 0.9848833073999763,
+      "precision_macro": 0.9879484702093396,
+      "recall_macro": 0.9828571428571429,
+      "por_clase": {
+        "AGENDAMIENTO_VISITA": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "n": 16
+        },
+        "ATENCION_CLIENTE": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "n": 14
+        },
+        "CANCELACION_TRASLADO_PLAN": {
+          "precision": 1.0,
+          "recall": 0.9,
+          "f1": 0.9473684210526315,
+          "n": 10
+        },
+        "DANO_FISICO_RED": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "n": 12
+        },
+        "FACTURACION": {
+          "precision": 0.9565217391304348,
+          "recall": 1.0,
+          "f1": 0.9777777777777777,
+          "n": 22
+        },
+        "INSTALACION": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "n": 14
+        },
+        "INTERMITENCIA": {
+          "precision": 1.0,
+          "recall": 0.9285714285714286,
+          "f1": 0.9629629629629629,
+          "n": 28
+        },
+        "SIN_SERVICIO": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "n": 34
+        },
+        "VELOCIDAD_LENTA": {
+          "precision": 0.9629629629629629,
+          "recall": 1.0,
+          "f1": 0.9811320754716981,
+          "n": 26
+        },
+        "WIFI_EQUIPO": {
+          "precision": 0.96,
+          "recall": 1.0,
+          "f1": 0.9795918367346939,
+          "n": 24
+        }
+      },
+      "ic_f1": [
+        0.9848833073999763,
+        0.9613987809366501,
+        1.0
+      ],
+      "dummy_f1": 0.02905982905982906
+    },
+    "prioridad": {
+      "exactitud": 0.875,
+      "f1_macro": 0.875364811340421,
+      "precision_macro": 0.875,
+      "recall_macro": 0.8764619883040936,
+      "por_clase": {
+        "alta": {
+          "precision": 0.875,
+          "recall": 0.9210526315789473,
+          "f1": 0.8974358974358975,
+          "n": 76
+        },
+        "baja": {
+          "precision": 0.875,
+          "recall": 0.875,
+          "f1": 0.875,
+          "n": 40
+        },
+        "media": {
+          "precision": 0.875,
+          "recall": 0.8333333333333334,
+          "f1": 0.8536585365853658,
+          "n": 84
+        }
+      },
+      "ic_f1": [
+        0.875364811340421,
+        0.8244119101511242,
+        0.9216579419820848
+      ],
+      "dummy_f1": 0.19718309859154928
+    }
+  },
+  "comparacion_xlmr": {
+    "categoria": {
+      "f1_svm": 0.9848833073999763,
+      "f1_xlmr": 0.9438693672450977,
+      "mcnemar": {
+        "solo_a": 10,
+        "solo_b": 3,
+        "chi2": 2.769230769230769,
+        "p": 0.0960923294556734
+      },
+      "dif_svm_menos_xlmr": [
+        0.04101394015487858,
+        0.0024153966640678105,
+        0.08645579392977644
+      ]
+    },
+    "prioridad": {
+      "f1_svm": 0.875364811340421,
+      "f1_xlmr": 0.8236162502804657,
+      "mcnemar": {
+        "solo_a": 25,
+        "solo_b": 14,
+        "chi2": 2.5641025641025643,
+        "p": 0.10931457620866644
+      },
+      "dif_svm_menos_xlmr": [
+        0.05174856105995529,
+        -0.005088470158052236,
+        0.11176362555495904
+      ]
+    }
+  },
+  "prioridad": {
+    "recall_alta": 0.9210526315789473,
+    "costo_esperado": 0.3,
+    "costo_siempre_media": 2.1,
+    "costos": {
+      "alta->media": 5,
+      "alta->baja": 10,
+      "media->baja": 3,
+      "media->alta": 1,
+      "baja->media": 1,
+      "baja->alta": 2
+    }
+  },
+  "equidad": {
+    "registro": {
+      "tabla": [
+        {
+          "grupo": "informal",
+          "n": 89,
+          "f1_macro": 0.9912380952380954,
+          "ic_inf": 0.970352182163188,
+          "ic_sup": 1.0,
+          "concluyente": true
+        },
+        {
+          "grupo": "muy_informal",
+          "n": 43,
+          "f1_macro": 0.9555555555555555,
+          "ic_inf": 0.8518518518518517,
+          "ic_sup": 1.0,
+          "concluyente": true
+        },
+        {
+          "grupo": "con_errores",
+          "n": 32,
+          "f1_macro": 1.0,
+          "ic_inf": 1.0,
+          "ic_sup": 1.0,
+          "concluyente": true
+        },
+        {
+          "grupo": "formal",
+          "n": 31,
+          "f1_macro": 0.9676767676767677,
+          "ic_inf": 0.8611111111111112,
+          "ic_sup": 1.0,
+          "concluyente": true
+        },
+        {
+          "grupo": "mezcla_kichwa",
+          "n": 5,
+          "f1_macro": 1.0,
+          "ic_inf": 1.0,
+          "ic_sup": 1.0,
+          "concluyente": false
+        }
+      ],
+      "brecha_concluyentes": 0.04444444444444451
+    },
+    "escritura": {
+      "tabla": [
+        {
+          "grupo": "estandar",
+          "n": 120,
+          "f1_macro": 0.9872186379928316,
+          "ic_inf": 0.9651984126984128,
+          "ic_sup": 1.0,
+          "concluyente": true
+        },
+        {
+          "grupo": "no_estandar",
+          "n": 80,
+          "f1_macro": 0.980952380952381,
+          "ic_inf": 0.8956521739130434,
+          "ic_sup": 1.0,
+          "concluyente": true
+        }
+      ],
+      "brecha_concluyentes": 0.006266257040450585
+    },
+    "region": {
+      "tabla": [
+        {
+          "grupo": "costa",
+          "n": 93,
+          "f1_macro": 0.9820556826849733,
+          "ic_inf": 0.9502349770091031,
+          "ic_sup": 1.0,
+          "concluyente": true
+        },
+        {
+          "grupo": "sierra",
+          "n": 93,
+          "f1_macro": 0.976,
+          "ic_inf": 0.8923076923076924,
+          "ic_sup": 1.0,
+          "concluyente": true
+        },
+        {
+          "grupo": "amazonia",
+          "n": 14,
+          "f1_macro": 1.0,
+          "ic_inf": 1.0,
+          "ic_sup": 1.0,
+          "concluyente": false
+        }
+      ],
+      "brecha_concluyentes": 0.0060556826849733625
+    },
+    "canal": {
+      "tabla": [
+        {
+          "grupo": "WhatsApp",
+          "n": 64,
+          "f1_macro": 1.0,
+          "ic_inf": 1.0,
+          "ic_sup": 1.0,
+          "concluyente": true
+        },
+        {
+          "grupo": "Llamada transcrita",
+          "n": 45,
+          "f1_macro": 0.938562091503268,
+          "ic_inf": 0.815696389666978,
+          "ic_sup": 1.0,
+          "concluyente": true
+        },
+        {
+          "grupo": "Redes sociales",
+          "n": 27,
+          "f1_macro": 1.0,
+          "ic_inf": 1.0,
+          "ic_sup": 1.0,
+          "concluyente": false
+        },
+        {
+          "grupo": "Correo",
+          "n": 25,
+          "f1_macro": 1.0,
+          "ic_inf": 1.0,
+          "ic_sup": 1.0,
+          "concluyente": false
+        },
+        {
+          "grupo": "Formulario web",
+          "n": 21,
+          "f1_macro": 0.9571428571428572,
+          "ic_inf": 0.8095238095238095,
+          "ic_sup": 1.0,
+          "concluyente": false
+        },
+        {
+          "grupo": "App",
+          "n": 18,
+          "f1_macro": 1.0,
+          "ic_inf": 1.0,
+          "ic_sup": 1.0,
+          "concluyente": false
+        }
+      ],
+      "brecha_concluyentes": 0.06143790849673203
+    },
+    "dificultad": {
+      "tabla": [
+        {
+          "grupo": "normal",
+          "n": 149,
+          "f1_macro": 0.9843524643524644,
+          "ic_inf": 0.952978730792682,
+          "ic_sup": 1.0,
+          "concluyente": true
+        },
+        {
+          "grupo": "ambigua",
+          "n": 31,
+          "f1_macro": 1.0,
+          "ic_inf": 1.0,
+          "ic_sup": 1.0,
+          "concluyente": true
+        },
+        {
+          "grupo": "dos_problemas",
+          "n": 20,
+          "f1_macro": 0.9775533108866442,
+          "ic_inf": 0.8911502782931354,
+          "ic_sup": 1.0,
+          "concluyente": false
+        }
+      ],
+      "brecha_concluyentes": 0.015647535647535626
+    }
+  },
+  "recall_alta_por_escritura": {
+    "recall_alta": {
+      "estandar": 0.92,
+      "no_estandar": 0.9230769230769231
+    },
+    "n": {
+      "estandar": 120.0,
+      "no_estandar": 80.0
+    }
+  },
+  "abstencion": {
+    "escritura": [
+      {
+        "escritura": "estandar",
+        "tasa_abstencion": 0.14166666666666666,
+        "n": 120
+      },
+      {
+        "escritura": "no_estandar",
+        "tasa_abstencion": 0.1,
+        "n": 80
+      }
+    ],
+    "registro": [
+      {
+        "registro": "con_errores",
+        "tasa_abstencion": 0.0625,
+        "n": 32
+      },
+      {
+        "registro": "formal",
+        "tasa_abstencion": 0.22580645161290322,
+        "n": 31
+      },
+      {
+        "registro": "informal",
+        "tasa_abstencion": 0.11235955056179775,
+        "n": 89
+      },
+      {
+        "registro": "mezcla_kichwa",
+        "tasa_abstencion": 0.0,
+        "n": 5
+      },
+      {
+        "registro": "muy_informal",
+        "tasa_abstencion": 0.13953488372093023,
+        "n": 43
+      }
+    ],
+    "region": [
+      {
+        "region": "amazonia",
+        "tasa_abstencion": 0.07142857142857142,
+        "n": 14
+      },
+      {
+        "region": "costa",
+        "tasa_abstencion": 0.10752688172043011,
+        "n": 93
+      },
+      {
+        "region": "sierra",
+        "tasa_abstencion": 0.15053763440860216,
+        "n": 93
+      }
+    ]
+  },
+  "abstencion_total": 0.125,
+  "riesgo_cobertura": [
+    {
+      "umbral": 0.0,
+      "cobertura": 1.0,
+      "riesgo": 0.015,
+      "n": 200
+    },
+    {
+      "umbral": 0.05,
+      "cobertura": 1.0,
+      "riesgo": 0.015,
+      "n": 200
+    },
+    {
+      "umbral": 0.1,
+      "cobertura": 1.0,
+      "riesgo": 0.015,
+      "n": 200
+    },
+    {
+      "umbral": 0.15,
+      "cobertura": 1.0,
+      "riesgo": 0.015,
+      "n": 200
+    },
+    {
+      "umbral": 0.2,
+      "cobertura": 1.0,
+      "riesgo": 0.015,
+      "n": 200
+    },
+    {
+      "umbral": 0.25,
+      "cobertura": 1.0,
+      "riesgo": 0.015,
+      "n": 200
+    },
+    {
+      "umbral": 0.3,
+      "cobertura": 1.0,
+      "riesgo": 0.015,
+      "n": 200
+    },
+    {
+      "umbral": 0.35,
+      "cobertura": 1.0,
+      "riesgo": 0.015,
+      "n": 200
+    },
+    {
+      "umbral": 0.4,
+      "cobertura": 1.0,
+      "riesgo": 0.015,
+      "n": 200
+    },
+    {
+      "umbral": 0.45,
+      "cobertura": 0.99,
+      "riesgo": 0.015151515151515152,
+      "n": 198
+    },
+    {
+      "umbral": 0.5,
+      "cobertura": 0.975,
+      "riesgo": 0.005128205128205128,
+      "n": 195
+    },
+    {
+      "umbral": 0.55,
+      "cobertura": 0.925,
+      "riesgo": 0.005405405405405406,
+      "n": 185
+    },
+    {
+      "umbral": 0.6,
+      "cobertura": 0.855,
+      "riesgo": 0.0,
+      "n": 171
+    },
+    {
+      "umbral": 0.65,
+      "cobertura": 0.8,
+      "riesgo": 0.0,
+      "n": 160
+    },
+    {
+      "umbral": 0.7,
+      "cobertura": 0.75,
+      "riesgo": 0.0,
+      "n": 150
+    },
+    {
+      "umbral": 0.75,
+      "cobertura": 0.69,
+      "riesgo": 0.0,
+      "n": 138
+    },
+    {
+      "umbral": 0.8,
+      "cobertura": 0.595,
+      "riesgo": 0.0,
+      "n": 119
+    },
+    {
+      "umbral": 0.85,
+      "cobertura": 0.495,
+      "riesgo": 0.0,
+      "n": 99
+    },
+    {
+      "umbral": 0.9,
+      "cobertura": 0.345,
+      "riesgo": 0.0,
+      "n": 69
+    },
+    {
+      "umbral": 0.95,
+      "cobertura": 0.135,
+      "riesgo": 0.0,
+      "n": 27
+    }
+  ],
+  "estres": [
+    {
+      "escenario": "A. Erratas",
+      "nivel": "10 % de palabras",
+      "f1_macro": 0.9863127931810618,
+      "caida": -0.0014294857810854822,
+      "veredicto": "OK",
+      "nota": ""
+    },
+    {
+      "escenario": "A. Erratas",
+      "nivel": "20 % de palabras",
+      "f1_macro": 0.9750640850039117,
+      "caida": 0.009819222396064586,
+      "veredicto": "OK",
+      "nota": ""
+    },
+    {
+      "escenario": "A. Erratas",
+      "nivel": "40 % de palabras",
+      "f1_macro": 0.9693697905081777,
+      "caida": 0.015513516891798584,
+      "veredicto": "OK",
+      "nota": ""
+    },
+    {
+      "escenario": "B. Mensaje truncado",
+      "nivel": "conserva 75 %",
+      "f1_macro": 0.9660930599014549,
+      "caida": 0.01879024749852143,
+      "veredicto": "OK",
+      "nota": ""
+    },
+    {
+      "escenario": "B. Mensaje truncado",
+      "nivel": "conserva 50 %",
+      "f1_macro": 0.898387169621586,
+      "caida": 0.08649613777839027,
+      "veredicto": "FALLA",
+      "nota": ""
+    },
+    {
+      "escenario": "B. Mensaje truncado",
+      "nivel": "conserva 25 %",
+      "f1_macro": 0.6810216842040798,
+      "caida": 0.3038616231958965,
+      "veredicto": "FALLA",
+      "nota": ""
+    },
+    {
+      "escenario": "B. Palabras faltantes",
+      "nivel": "10 % eliminadas",
+      "f1_macro": 0.9580299062955856,
+      "caida": 0.026853401104390717,
+      "veredicto": "OK",
+      "nota": ""
+    },
+    {
+      "escenario": "B. Palabras faltantes",
+      "nivel": "30 % eliminadas",
+      "f1_macro": 0.9224574529960412,
+      "caida": 0.06242585440393511,
+      "veredicto": "FALLA",
+      "nota": ""
+    },
+    {
+      "escenario": "B. Palabras faltantes",
+      "nivel": "50 % eliminadas",
+      "f1_macro": 0.8379934731231129,
+      "caida": 0.14688983427686342,
+      "veredicto": "FALLA",
+      "nota": ""
+    },
+    {
+      "escenario": "E. Palabras clave ausentes",
+      "nivel": "top 3 por clase (10 palabras)",
+      "f1_macro": 0.9650391434604408,
+      "caida": 0.019844163939535475,
+      "veredicto": "OK",
+      "nota": ""
+    },
+    {
+      "escenario": "E. Palabras clave ausentes",
+      "nivel": "top 10 por clase (29 palabras)",
+      "f1_macro": 0.8993102432864003,
+      "caida": 0.08557306411357601,
+      "veredicto": "FALLA",
+      "nota": ""
+    },
+    {
+      "escenario": "D. Sin escritura no estándar en entrenamiento",
+      "nivel": "prueba no estándar (n=80)",
+      "f1_macro": 0.9499248120300752,
+      "caida": 0.031027568922305848,
+      "veredicto": "OK",
+      "nota": "caída frente al modelo entrenado con todos los registros"
+    },
+    {
+      "escenario": "D. Entrenado solo con la costa",
+      "nivel": "prueba sierra y amazonía (n=107)",
+      "f1_macro": 1.0,
+      "caida": -0.01828571428571435,
+      "veredicto": "OK",
+      "nota": ""
+    },
+    {
+      "escenario": "F. Etiquetas ruidosas (propio)",
+      "nivel": "10 % de etiquetas cambiadas",
+      "f1_macro": 0.9824520020882717,
+      "caida": 0.002431305311704657,
+      "veredicto": "OK",
+      "nota": ""
+    },
+    {
+      "escenario": "F. Etiquetas ruidosas (propio)",
+      "nivel": "20 % de etiquetas cambiadas",
+      "f1_macro": 0.9786340959456739,
+      "caida": 0.006249211454302461,
+      "veredicto": "OK",
+      "nota": ""
+    },
+    {
+      "escenario": "F. Etiquetas ruidosas (propio)",
+      "nivel": "30 % de etiquetas cambiadas",
+      "f1_macro": 0.9336758175185946,
+      "caida": 0.051207489881381685,
+      "veredicto": "FALLA",
+      "nota": ""
+    },
+    {
+      "escenario": "F. Quejas difíciles (propio)",
+      "nivel": "ambigua (n=31)",
+      "f1_macro": 1.0,
+      "caida": -0.015116692600023685,
+      "veredicto": "OK",
+      "nota": ""
+    },
+    {
+      "escenario": "F. Quejas difíciles (propio)",
+      "nivel": "dos_problemas (n=20)",
+      "f1_macro": 0.9775533108866442,
+      "caida": 0.007329996513332104,
+      "veredicto": "OK",
+      "nota": "n < 30: sin conclusión"
+    }
+  ],
+  "desbalance": [
+    {
+      "prevalencia_sin_servicio": 0.5,
+      "exactitud": 0.9882352941176471,
+      "f1_macro": 0.9806164946164946
+    },
+    {
+      "prevalencia_sin_servicio": 0.8,
+      "exactitud": 0.9952380952380953,
+      "f1_macro": 0.9804444444444445
+    },
+    {
+      "prevalencia_sin_servicio": 0.95,
+      "exactitud": 1.0,
+      "f1_macro": 1.0
+    }
+  ],
+  "errores": [
+    {
+      "real": "CANCELACION_TRASLADO_PLAN",
+      "predicha": "FACTURACION",
+      "texto": "alo buenas mire quiero quitar la television del paquete y dejar solo el internet porque ya ni la veo llego tarde del trabajo cuanto me baja la mensualidad"
+    },
+    {
+      "real": "INTERMITENCIA",
+      "predicha": "VELOCIDAD_LENTA",
+      "texto": "Aló, buenas tardes. Diez días con caídas constantes en mi centro de copiado."
+    },
+    {
+      "real": "INTERMITENCIA",
+      "predicha": "WIFI_EQUIPO",
+      "texto": "Diez días con cortes constantes; el router además se recalienta."
+    }
+  ],
+  "latencia": {
+    "p50_ms": 51.47038600000542,
+    "p95_ms": 63.3655858499992,
+    "n": 1000
+  }
+}
