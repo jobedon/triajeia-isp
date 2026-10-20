@@ -24,9 +24,12 @@ sistema **sugiere** la categoría, el área de atención y la prioridad, y deja 
 
 ## Reproducir los resultados (Google Colab)
 
-1. Abrir los notebooks **en orden** desde GitHub en Colab (Archivo → Abrir notebook → GitHub) con entorno de **GPU T4**.
-2. Cada notebook monta Google Drive y trabaja en `MyDrive/triajeia-isp`, de modo que los cinco comparten datos,
-   modelos y resultados.
+1. Dar acceso al código en Colab, de una de estas dos formas:
+   - **Token (recomendado):** crear en GitHub un *fine-grained token* de solo lectura para este repositorio y
+     guardarlo en Colab → 🔑 Secretos con el nombre `GITHUB_TOKEN` (activar «Acceso del notebook»).
+   - **ZIP:** subir `triajeia-isp.zip` (el repositorio comprimido) a la raíz de Google Drive.
+2. Abrir los notebooks **en orden** (01 → 05) con entorno de **GPU T4**. Cada uno monta Google Drive y trabaja en
+   `MyDrive/triajeia-isp`, de modo que los cinco comparten datos, modelos y resultados.
 3. Al terminar, `results/` y `models/` quedan en Drive.
 
 ## Pruebas
