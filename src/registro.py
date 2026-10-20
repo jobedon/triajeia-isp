@@ -103,6 +103,14 @@ def conectar(url: str | None = None) -> Engine:
     return motor
 
 
+def describir(motor: Engine) -> str:
+    """Descripción legible de la base de datos en uso (sin contraseña)."""
+    u = motor.url
+    if u.get_backend_name() == "sqlite":
+        return f"SQLite local · {u.database}"
+    return f"PostgreSQL · {u.host} · base «{u.database}»"
+
+
 def registrar(motor: Engine, nombre: str, ip: str | None, mensaje: str, resultado: dict[str, Any],
               alerta: bool, version: str = "") -> int:
     """Guarda una clasificación y devuelve su id."""

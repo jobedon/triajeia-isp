@@ -17,7 +17,7 @@ sys.path.insert(0, str(RAIZ))
 
 from src.data_processing import validar_entrada  # noqa: E402
 from src.model import ClasificadorTriaje  # noqa: E402
-from src.registro import DIAS_RETENCION, conectar, leer, purgar, registrar, registrar_decision  # noqa: E402
+from src.registro import DIAS_RETENCION, conectar, describir, leer, purgar, registrar, registrar_decision  # noqa: E402
 from src.utils import cargar_config, cargar_json, obtener_logger  # noqa: E402
 
 log = obtener_logger("app")
@@ -176,6 +176,8 @@ def panel_registro(st, px, motor, umbral: float) -> None:
     clave = clave_admin()
     if motor is None:
         st.error("La base de datos no está disponible.")
+        if st.session_state.get("error_bd"):
+            st.caption(f"Detalle técnico: {st.session_state['error_bd']}")
         return
     if not clave:
         st.info("El panel está desactivado: falta configurar la contraseña de administración "
@@ -193,6 +195,12 @@ def panel_registro(st, px, motor, umbral: float) -> None:
         return
 
     df = leer(motor)
+    bd = describir(motor)
+    if bd.startswith("SQLite"):
+        st.warning(f"🗄️ Base de datos: **{bd}**. Si la aplicación está en Streamlit Cloud, este archivo es temporal "
+                   "y se borra al reiniciar: configure el secreto `db_url` (PostgreSQL) y reinicie la aplicación.")
+    else:
+        st.success(f"🗄️ Base de datos: {bd}")
     cab1, cab2 = st.columns([4, 1])
     cab1.markdown(f"Registros de los últimos **{DIAS_RETENCION} días** (los anteriores se borran solos). "
                   "Los mensajes se guardan sin cédulas, teléfonos ni correos, y la IP como código irreversible.")
@@ -314,9 +322,11 @@ def main() -> None:
 
     try:
         motor = conectar_bd()
-    except Exception:
+        st.session_state.pop("error_bd", None)
+    except Exception as e:
         log.exception("Sin base de datos")
         motor = None
+        st.session_state["error_bd"] = f"{type(e).__name__}: {e}"
     st.session_state.setdefault("historial", [])
     st.session_state.setdefault("texto", "")
 
@@ -414,6 +424,8 @@ def main() -> None:
                             registrar_decision(motor, ultimo["id"], aceptada=False, categoria=cc, prioridad=pc)
                             ultimo["decidido"] = f"corregida a {nombre(cc)} · prioridad {nombre(pc)}"
                             st.rerun()
+            elif motor is None:
+                st.caption("Esta clasificación no se registró: la base de datos no está disponible.")
             else:
                 st.caption("Esta clasificación no se registró (no se marcó el consentimiento).")
 
