@@ -1,8 +1,11 @@
 [theme]
-primaryColor = "#791632"
+primaryColor = "#1F3A5F"
 
 [server]
 maxUploadSize = 5
 
 [browser]
 gatherUsageStats = false   # no se envían estadísticas de uso a Streamlit
+
+[client]
+toolbarMode = "minimal"   # oculta el botón Deploy y el menú de desarrollador
