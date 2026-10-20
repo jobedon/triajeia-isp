@@ -15,3 +15,6 @@ checkpoints/
 # Sistema
 .DS_Store
 Thumbs.db
+
+# Registro local de la aplicación (datos personales: nunca se versiona)
+data/registro/

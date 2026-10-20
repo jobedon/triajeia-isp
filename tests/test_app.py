@@ -37,3 +37,16 @@ def test_clasificar_lote_marca_filas_invalidas(corpus_pequeno):
     m = ClasificadorTriaje(modelos, {"SIN_SERVICIO": "S", "FACTURACION": "F", "WIFI_EQUIPO": "S"})
     res = clasificar_lote(m, pd.DataFrame({"q": ["me cobraron dos veces la factura", "😡"]}), "q")
     assert res.loc[0, "error"] == "" and res.loc[1, "error"] != ""
+
+
+def test_indicadores_y_alertas():
+    from app.app import alertas, indicadores
+    ahora = pd.Timestamp.now(tz="America/Guayaquil")
+    df = pd.DataFrame({"fecha_hora": [ahora] * 10, "nombre": ["a"] * 5 + ["b"] * 5, "ip_hash": ["ip_1"] * 10,
+                       "decision": ["aceptada"] * 4 + ["corregida"] * 6, "requiere_revision": [True] * 3 + [False] * 7,
+                       "alerta_prioridad": [False] * 10, "conf_categoria": [0.9] * 10})
+    ind = indicadores(df)
+    assert ind["n"] == 10 and ind["personas"] == 2 and ind["aceptacion"] == 0.4 and abs(ind["abstencion"] - 0.3) < 1e-9
+    msj = alertas(df)
+    assert any("abstención" in m for m in msj) and any("aceptación" in m for m in msj)
+    assert indicadores(df.iloc[0:0]) == {"n": 0} and alertas(df.iloc[0:0]) == []

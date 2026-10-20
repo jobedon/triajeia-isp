@@ -11,5 +11,6 @@ plotly==7.1.0
 optuna==5.0.0
 fairlearn==0.15.0
 streamlit==1.66.0
+SQLAlchemy==2.0.55
 pytest==9.1.1
 # XLM-RoBERTa (solo en Google Colab con GPU): torch y transformers ya vienen instalados en Colab.
