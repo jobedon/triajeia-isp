@@ -22,7 +22,7 @@ informal por clientes de un proveedor de internet, y entregarlo como un servicio
 | Líneas base | Reglas de palabras clave (N0) y TF-IDF + SVM (N1) | *Baseline* de clase mayoritaria y estratificado; SVM como modelo principal |
 | Modelo de lenguaje ajustado | Encoder en español (BETO o RoBERTa-BNE) que supere a N1 con McNemar | **XLM-RoBERTa** (cambio de la Semana 2): empató con la SVM, que se mantiene |
 | F1-macro en el dominio (tarea B) | ≥ 0,70 (mínimo 0,65) | **0,985** en categoría y **0,875** en prioridad, sobre el corpus sintético |
-| Servicio utilizable | API REST con p95 ≤ 300 ms y tablero | **Aplicación web Streamlit** con p95 de 58 ms y panel de monitoreo; sin API REST separada |
+| Servicio utilizable | API REST con p95 ≤ 300 ms y tablero | **Aplicación web Streamlit** con p95 de 62 ms y panel de monitoreo; sin API REST separada |
 
 ## 3. Relevancia
 

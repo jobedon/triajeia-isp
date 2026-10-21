@@ -3,7 +3,7 @@
 ![Python](https://img.shields.io/badge/python-3.11%E2%80%933.13-blue)
 ![scikit-learn](https://img.shields.io/badge/scikit--learn-1.6.1-orange)
 ![Streamlit](https://img.shields.io/badge/streamlit-1.66-red)
-![Pruebas](https://img.shields.io/badge/pruebas-33%20pasan-brightgreen)
+![Pruebas](https://img.shields.io/badge/pruebas-36%20pasan-brightgreen)
 ![Código: MIT](https://img.shields.io/badge/c%C3%B3digo-MIT-green)
 ![Datos: CC BY 4.0](https://img.shields.io/badge/datos-CC%20BY%204.0-lightgrey)
 
@@ -91,10 +91,10 @@ Sobre la prueba fija de 200 quejas:
 
 | Criterio fijado antes de evaluar | Resultado | ¿Cumple? |
 |---|---|---|
-| Brecha de F1 entre formas de escribir ≤ 0,10 | 0,044 | ✔ |
+| Brecha de F1 entre formas de escribir ≤ 0,10 | 0,044 (IC 95 % 0,000 – 0,156) | El valor sí; con grupos de 31 a 89 casos el IC no permite asegurarlo |
 | Recall de prioridad alta ≥ 0,90 | 0,921 | ✔ |
 | Abstención ≤ 15 % | 12,5 % | ✔ |
-| Latencia p95 ≤ 300 ms | 58 ms | ✔ |
+| Latencia p95 ≤ 300 ms | 62 ms | ✔ |
 | Pruebas de estrés: caída de F1 ≤ 0,05 | 11 de 18 | Parcial: falla con mensajes cortados o con muchas palabras faltantes |
 
 **Optimización:** en la categoría no hubo mejora (+0,000) y se mantuvo la configuración de partida; en la prioridad
@@ -118,7 +118,7 @@ cd triajeia-isp
 python -m venv .venv && source .venv/bin/activate      # en Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 
-pytest -q                                   # 33 pruebas unitarias
+pytest -q                                   # 36 pruebas unitarias
 ruff check . && ruff format --check .      # estilo PEP 8 (configuración en ruff.toml)
 streamlit run app/app.py                    # aplicación en http://localhost:8501
 python -m src.train --final                 # reentrenar el modelo (opcional)

@@ -12,7 +12,7 @@ se obtiene de la categoría con una tabla fija.
 | Diferencia significativa (McNemar, α = 0,05) | — | No (p = 0,096 y p = 0,109) |
 | Explicación de cada predicción | Directa: peso de cada palabra | Requiere técnicas adicionales (LIME, SHAP) |
 | Tamaño del modelo | 29 MB (ambos clasificadores) | ~1 GB por clasificador |
-| Hardware | CPU: 58 ms por queja (p95) | GPU para entrenar; inferencia lenta en CPU |
+| Hardware | CPU: 62 ms por queja (p95) | GPU para entrenar; inferencia lenta en CPU |
 | Despliegue en Streamlit Community Cloud | Sí | Difícil por memoria |
 
 **Regla de decisión** (fijada en la Semana 4): *un modelo más costoso solo reemplaza a la SVM si la supera con
@@ -143,7 +143,7 @@ flowchart LR
 | `src/evaluate.py` | Métricas, intervalos *bootstrap*, McNemar, subgrupos, riesgo–cobertura, costo y perturbaciones de estrés |
 | `src/registro.py` | Base de datos (SQLite o PostgreSQL), anonimización, código de IP, decisiones y retención |
 | `app/app.py`, `app/estilo.py`, `app/assets/estilo.css` | Interfaz Streamlit, componentes visuales y hoja de estilos |
-| `tests/` | 33 pruebas unitarias (`pytest`) |
+| `tests/` | 36 pruebas unitarias (`pytest`) |
 
 ## 6. Tecnologías y versiones
 

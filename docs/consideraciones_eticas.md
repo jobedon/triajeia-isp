@@ -39,13 +39,18 @@ errores + mezcla con kichwa).
 
 | Métrica de equidad | Resultado | Criterio |
 |---|---|---|
-| Brecha de F1-macro entre formas de escribir (n ≥ 30) | 0,044 | ≤ 0,10 ✔ |
+| Brecha de F1-macro entre formas de escribir (n ≥ 30) | 0,044 (IC 95 % 0,000 – 0,156) | ≤ 0,10: el valor cumple; el IC no permite asegurarlo |
 | F1 escritura estándar (n = 120) frente a no estándar (n = 80) | 0,987 frente a 0,981 | — |
-| Brecha entre regiones (costa y sierra) | 0,006 | ≤ 0,10 ✔ |
-| Brecha entre canales (WhatsApp y llamada transcrita) | 0,061 | ≤ 0,10 ✔ |
-| **Igualdad de oportunidad**: recall de prioridad alta, estándar frente a no estándar (`fairlearn.MetricFrame`) | 0,920 frente a 0,923 | Diferencia 0,003 |
+| Brecha entre regiones (costa y sierra) | 0,006 (IC 95 % 0,000 – 0,095) | ≤ 0,10 ✔ con evidencia |
+| Brecha entre escritura estándar y no estándar | 0,006 (IC 95 % 0,000 – 0,079) | ≤ 0,10 ✔ con evidencia |
+| Brecha entre canales (WhatsApp y llamada transcrita) | 0,061 (IC 95 % 0,000 – 0,185) | ≤ 0,10: el valor cumple; el IC no permite asegurarlo |
+| **Igualdad de oportunidad**: recall de prioridad alta, estándar frente a no estándar (`fairlearn.MetricFrame`) | 0,920 frente a 0,923 | Diferencia −0,003 (IC 95 % −0,128 – +0,134) |
 | Tasa de abstención, estándar frente a no estándar | 14,2 % frente a 10,0 % | — |
 | Subgrupos sin conclusión por n < 30 | Mezcla con kichwa (n = 5), amazonía (n = 14), 4 canales | Se reportan con su IC |
+
+**Intervalos de las diferencias** (observación 1 de la docente). Ninguna diferencia entre pares de subgrupos está
+demostrada (todos sus IC incluyen el 0), pero con grupos de 31 a 89 casos tampoco puede asegurarse que la brecha entre
+las cuatro formas de escribir o entre canales sea ≤ 0,10. Se declara como limitación y se medirá con reclamos reales.
 
 **Abstención y cobertura** (observación 2 de la docente). La abstención podría esconder un peor trato si el modelo
 dudara más justamente con quien escribe distinto. No ocurre: duda más con las quejas **formales** (22,6 %) que con las
@@ -119,7 +124,7 @@ revelar el origen étnico, que la LOPDP considera dato sensible. En TriajeIA-ISP
 | | Grupo | Impacto | Evidencia |
 |---|---|---|---|
 | ✚ | Clientes | Su reclamo llega antes al área correcta | Supuesto a validar: el proyecto no midió reasignaciones reales |
-| ✚ | Operadores | Menos lectura repetitiva y criterios más consistentes entre turnos | Latencia de 58 ms (p95); validación en un clic |
+| ✚ | Operadores | Menos lectura repetitiva y criterios más consistentes entre turnos | Latencia de 62 ms (p95); validación en un clic |
 | ✚ | Clientes en situación crítica | La prioridad alta no se pierde: 0 de 76 casos de prioridad alta se sugirieron como baja | `evaluacion.md`, sección 3 |
 | ✚ | Comunidad | Corpus, código y método publicados para el español de Ecuador | Repositorio |
 | ✖ | Quien envía mensajes muy cortos | Más errores: con la mitad del mensaje, el F1 baja 0,086 | Prueba de estrés B |

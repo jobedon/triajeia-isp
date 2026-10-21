@@ -32,9 +32,9 @@ en otros idiomas o de otros sectores.
 | F1-macro (IC 95 %) | 0,985 (0,961 – 1,000) | 0,875 (0,824 – 0,922) |
 | Exactitud | 0,985 | 0,875 |
 | Recall de prioridad alta | — | 0,921 |
-| Brecha de F1 entre formas de escribir (n ≥ 30) | 0,044 | — |
+| Brecha de F1 entre formas de escribir (n ≥ 30) | 0,044 (IC 95 % 0,000 – 0,156) | — |
 | Abstención | 12,5 % (total) | |
-| Latencia p95 en CPU | 58 ms | |
+| Latencia p95 en CPU | 62 ms | |
 
 **Limitaciones.** Entrenado y evaluado con datos sintéticos: el desempeño con reclamos reales no está medido. Pierde
 precisión con mensajes muy cortos o incompletos y cuando faltan las palabras propias del problema.

@@ -8,7 +8,8 @@ Este documento sigue la estructura de la fase de evaluación vista en la Semana 
 - **Datos:** prueba fija de **200 quejas** del corpus sintético v2, usada **una sola vez** en
   [`notebooks/05_evaluacion.ipynb`](../notebooks/05_evaluacion.ipynb).
 - **Origen de las cifras:** ejecución en Google Colab (GPU Tesla T4, Python 3.13, scikit-learn 1.6.1) del 20/10/2026;
-  todas están en [`results/metrics/05_evaluacion.json`](../results/metrics/05_evaluacion.json).
+  todas están en [`results/metrics/05_evaluacion.json`](../results/metrics/05_evaluacion.json) y, los intervalos de las
+  diferencias entre subgrupos, en [`results/metrics/05_brechas_ic.json`](../results/metrics/05_brechas_ic.json).
 
 ## Resumen
 
@@ -18,9 +19,9 @@ Este documento sigue la estructura de la fase de evaluación vista en la Semana 
 | F1-macro prioridad | **0,875** (IC 95 % 0,824 – 0,922) | — | — |
 | Recall de prioridad alta | **0,921** | ≥ 0,90 (compromiso ético, Semana 4) | Sí |
 | Prioridad alta clasificada como baja | **0 de 76** | Error más grave | — |
-| Brecha de F1 entre formas de escribir (n ≥ 30) | **0,044** | ≤ 0,10 (Semana 4) | Sí |
+| Brecha de F1 entre formas de escribir (n ≥ 30) | **0,044** (IC 95 % 0,000 – 0,156) | ≤ 0,10 (Semana 4) | El valor sí; el IC no permite asegurarlo |
 | Abstención (revisión humana) | **12,5 %** | ≤ 15 % (Documento de Alcance) | Sí |
-| Latencia p95 por queja | **58 ms** | ≤ 300 ms | Sí |
+| Latencia p95 por queja | **62 ms** | ≤ 300 ms | Sí |
 | Pruebas de estrés superadas | **11 de 18** | Caída de F1 ≤ 0,05 | Parcial |
 
 > **Advertencia principal.** El corpus es sintético: las quejas describen el problema con claridad y las etiquetas
@@ -160,13 +161,34 @@ de evaluar: brecha ≤ 0,10 entre subgrupos con n ≥ 30.
 | Canal (WhatsApp 64, llamada transcrita 45; el resto con n < 30) | 0,061 | Sí |
 
 - **Igualdad de oportunidad en la prioridad** (`fairlearn.MetricFrame`): recall de prioridad alta 0,920 con escritura
-  estándar y 0,923 con no estándar (diferencia 0,003).
+  estándar y 0,923 con no estándar (diferencia −0,003, IC 95 % −0,128 – +0,134).
+
+**Intervalos de las diferencias entre subgrupos** (observación 1 de la Semana 4; notebook 05, sección 10). Se
+remuestrea dentro de cada subgrupo con n ≥ 30 (2.000 réplicas) y se calcula el IC 95 % de la brecha y de la diferencia
+de cada par. El criterio se cumple **con evidencia** solo si el límite superior de la brecha es ≤ 0,10.
+
+| Subgrupo | Brecha (IC 95 %) | ¿Cumple ≤ 0,10 con evidencia? |
+|---|---|---|
+| Forma de escribir (4 grupos, de 31 a 89 casos) | 0,044 (0,000 – 0,156) | **No se puede asegurar** |
+| Escritura estándar frente a no estándar (120 y 80) | 0,006 (0,000 – 0,079) | Sí |
+| Región: costa y sierra (93 y 93) | 0,006 (0,000 – 0,095) | Sí |
+| Canal: WhatsApp y llamada transcrita (64 y 45) | 0,061 (0,000 – 0,185) | **No se puede asegurar** |
+
+- **Ningún par de subgrupos muestra una diferencia demostrada:** el IC de las 9 diferencias entre pares incluye el 0.
+  La mayor es WhatsApp frente a llamada transcrita: 0,061 (0,000 – 0,185).
+- **Lectura.** Los valores observados están bajo el límite, pero en la forma de escribir y en el canal los grupos son
+  pequeños y el intervalo llega a 0,156 y 0,185: con estos datos no se puede descartar una brecha mayor que 0,10.
+  Al agrupar las formas de escribir en estándar y no estándar, el criterio sí se cumple con evidencia.
+
+![Intervalos de las diferencias entre subgrupos](../results/figures/05_brechas_ic.png)
 - **Abstención por subgrupo** (ver sección 8): el modelo duda **más** con las quejas **formales** (22,6 %) que con las
   que tienen errores (6,2 %). La abstención no está ocultando un peor trato a quien escribe con faltas.
 
 ![Equidad por subgrupo](../results/figures/05_equidad_subgrupos.png)
 
-**Limitaciones.** Los intervalos de los grupos de 31 a 45 casos son anchos (por ejemplo, 0,852 – 1,000). El subgrupo
+**Limitaciones.** Los intervalos de los grupos de 31 a 45 casos son anchos (por ejemplo, 0,852 – 1,000), y por eso
+la equidad entre las cuatro formas de escribir y entre canales no puede asegurarse con evidencia; hará falta medirla
+con más casos (por ejemplo, con reclamos reales en modo sombra). El subgrupo
 «mezcla con kichwa» es un atributo de diseño del corpus sintético, usado **solo** para evaluar la equidad: no es una
 entrada del modelo y en un sistema real no se infiere ni se guarda, porque puede revelar el origen étnico
 (ver [`consideraciones_eticas.md`](consideraciones_eticas.md)).
@@ -250,7 +272,7 @@ desarrollo, sin mirar la prueba, como el más alto que mantiene la abstención e
 
 ![Curva riesgo–cobertura](../results/figures/05_riesgo_cobertura.png)
 
-**Desempeño en el tiempo.** Latencia por queja en CPU (1.000 predicciones): mediana **47 ms**, p95 **58 ms**, frente a la
+**Desempeño en el tiempo.** Latencia por queja en CPU (1.000 predicciones): mediana **50 ms**, p95 **62 ms**, frente a la
 meta de 300 ms.
 
 **Monitoreo en operación.** La aplicación registra, con consentimiento, cada sugerencia y la decisión del operador
