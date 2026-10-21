@@ -1,0 +1,153 @@
+{
+  "n_boot": 2000,
+  "brecha_max": 0.1,
+  "categoria_f1": {
+    "registro": {
+      "grupos": [
+        "informal",
+        "muy_informal",
+        "con_errores",
+        "formal"
+      ],
+      "brecha": [
+        0.04444444444444451,
+        0.0,
+        0.15585430194805183
+      ],
+      "pares": [
+        {
+          "a": "informal",
+          "b": "muy_informal",
+          "dif": 0.03568253968253987,
+          "ic_inf": -0.02691118212989781,
+          "ic_sup": 0.13953416347381878
+        },
+        {
+          "a": "informal",
+          "b": "con_errores",
+          "dif": -0.008761904761904638,
+          "ic_inf": -0.032180944055943926,
+          "ic_sup": 0.0
+        },
+        {
+          "a": "informal",
+          "b": "formal",
+          "dif": 0.023561327561327672,
+          "ic_inf": -0.026285714285714357,
+          "ic_sup": 0.13461538461538458
+        },
+        {
+          "a": "muy_informal",
+          "b": "con_errores",
+          "dif": -0.04444444444444451,
+          "ic_inf": -0.14814814814814825,
+          "ic_sup": 0.0
+        },
+        {
+          "a": "muy_informal",
+          "b": "formal",
+          "dif": -0.0121212121212122,
+          "ic_inf": -0.13333333333333341,
+          "ic_sup": 0.12698412698412698
+        },
+        {
+          "a": "con_errores",
+          "b": "formal",
+          "dif": 0.03232323232323231,
+          "ic_inf": 0.0,
+          "ic_sup": 0.1428571428571428
+        }
+      ]
+    },
+    "escritura": {
+      "grupos": [
+        "estandar",
+        "no_estandar"
+      ],
+      "brecha": [
+        0.006266257040450585,
+        0.0,
+        0.07899377156390558
+      ],
+      "pares": [
+        {
+          "a": "estandar",
+          "b": "no_estandar",
+          "dif": 0.006266257040450585,
+          "ic_inf": -0.028068775995246452,
+          "ic_sup": 0.07899377156390558
+        }
+      ]
+    },
+    "region": {
+      "grupos": [
+        "costa",
+        "sierra"
+      ],
+      "brecha": [
+        0.0060556826849733625,
+        0.0,
+        0.0953855096403723
+      ],
+      "pares": [
+        {
+          "a": "costa",
+          "b": "sierra",
+          "dif": 0.0060556826849733625,
+          "ic_inf": -0.04134789949796334,
+          "ic_sup": 0.0953855096403723
+        }
+      ]
+    },
+    "canal": {
+      "grupos": [
+        "WhatsApp",
+        "Llamada transcrita"
+      ],
+      "brecha": [
+        0.06143790849673203,
+        0.0,
+        0.18475063131313116
+      ],
+      "pares": [
+        {
+          "a": "WhatsApp",
+          "b": "Llamada transcrita",
+          "dif": 0.06143790849673203,
+          "ic_inf": 0.0,
+          "ic_sup": 0.18475063131313116
+        }
+      ]
+    }
+  },
+  "recall_alta_escritura": {
+    "grupos": [
+      "estandar",
+      "no_estandar"
+    ],
+    "brecha": [
+      0.003076923076923088,
+      0.0018808482805761002,
+      0.1507263630089717
+    ],
+    "pares": [
+      {
+        "a": "estandar",
+        "b": "no_estandar",
+        "dif": -0.003076923076923088,
+        "ic_inf": -0.12766007019491976,
+        "ic_sup": 0.1342497161537859
+      }
+    ]
+  },
+  "entorno": {
+    "colab": true,
+    "prueba_rapida": false,
+    "python": "3.13.15",
+    "sklearn": "1.6.1",
+    "pandas": "2.2.3",
+    "fecha": "2026-10-21 01:51",
+    "torch": "2.11.0+cu130",
+    "gpu": "Tesla T4"
+  }
+}
