@@ -74,7 +74,7 @@ informal por clientes de un proveedor de internet, y entregarlo como un servicio
 
 | Desviación | Causa | Decisión |
 |---|---|---|
-| Corpus real con doble anotación → corpus **sintético** | La recolección y anotación de reclamos públicos no se completó en el Sprint 2, y los registros de soporte disponibles en el trabajo son confidenciales y están escritos por el personal, no por los clientes | Corpus sintético generado con Claude a partir de especificaciones con etiquetas fijadas por reglas explícitas; se declara como la principal limitación |
+| Corpus real con doble anotación → corpus **sintético** | La recolección y anotación de reclamos públicos no se completó en el Sprint 2, y los registros de soporte disponibles en el trabajo son confidenciales y están escritos por el personal, no por los clientes | Corpus sintético generado con Claude a partir de especificaciones con etiquetas fijadas por reglas explícitas, con autorización de la docente; se declara como la principal limitación |
 | Corpus v1 → v2 | El v1 tenía frases repetidas que delataban la categoría y una regla de prioridad injusta con las personas vulnerables | Se regeneró con seis redactores independientes y control de calidad automático |
 | BETO → XLM-RoBERTa | El benchmark de la tarea A es 87 % inglés (Semana 2) | Modelo multilingüe para ambas tareas |
 | API REST → aplicación Streamlit | La entrega final exige una interfaz utilizable desplegada; Streamlit cubre interfaz y servicio en un solo componente | La lógica vive en `src/` y puede exponerse como API en el futuro |
