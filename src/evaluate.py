@@ -101,6 +101,58 @@ def por_subgrupo(
     return pd.DataFrame(filas).sort_values("n", ascending=False).reset_index(drop=True)
 
 
+def ic_brecha_subgrupos(
+    df: pd.DataFrame,
+    col_grupo: str,
+    col_real: str,
+    col_pred: str,
+    n_minimo: int = 30,
+    metrica: Callable = f1_macro,
+    n_boot: int = 2000,
+    semilla: int = 42,
+) -> dict[str, Any]:
+    """IC 95 % de las diferencias de la métrica entre subgrupos con al menos n_minimo casos.
+
+    En cada réplica bootstrap se remuestrea dentro de cada subgrupo (se conserva su tamaño) y se calculan la
+    brecha (máximo − mínimo entre subgrupos) y la diferencia de cada par. Si el IC de un par incluye el 0, no
+    hay evidencia de que los subgrupos difieran.
+
+    Returns:
+        {"grupos": [...], "brecha": (valor, inf, sup) o None, "pares": [{"a", "b", "dif", "ic_inf", "ic_sup"}]}.
+    """
+    rng = np.random.default_rng(semilla)
+    datos = {
+        g: (np.asarray(sub[col_real]), np.asarray(sub[col_pred]))
+        for g, sub in df.groupby(col_grupo)
+        if len(sub) >= n_minimo
+    }
+    grupos = sorted(datos, key=lambda g: -len(datos[g][0]))
+    if len(grupos) < 2:
+        return {"grupos": grupos, "brecha": None, "pares": []}
+    observado = {g: metrica(*datos[g]) for g in grupos}
+    replicas = []
+    for _ in range(n_boot):
+        valores = {}
+        for g in grupos:
+            y, p = datos[g]
+            idx = rng.integers(0, len(y), len(y))
+            valores[g] = metrica(y[idx], p[idx])
+        replicas.append(valores)
+
+    def intervalo(valor: float, serie: list[float]) -> tuple[float, float, float]:
+        return float(valor), float(np.quantile(serie, 0.025)), float(np.quantile(serie, 0.975))
+
+    brecha = intervalo(
+        max(observado.values()) - min(observado.values()), [max(r.values()) - min(r.values()) for r in replicas]
+    )
+    pares = []
+    for i, a in enumerate(grupos):
+        for b in grupos[i + 1 :]:
+            v, lo, hi = intervalo(observado[a] - observado[b], [r[a] - r[b] for r in replicas])
+            pares.append({"a": a, "b": b, "dif": v, "ic_inf": lo, "ic_sup": hi})
+    return {"grupos": grupos, "brecha": brecha, "pares": pares}
+
+
 def recall_clase(y_true, y_pred, clase: str) -> float:
     """Recall de una clase concreta (por ejemplo, prioridad «alta»)."""
     return recall_score(y_true, y_pred, labels=[clase], average="macro", zero_division=0)
