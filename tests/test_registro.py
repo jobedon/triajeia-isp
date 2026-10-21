@@ -1,23 +1,41 @@
 """Pruebas del registro en base de datos (SQLite temporal)."""
+
 from datetime import datetime, timedelta, timezone
 
 import pytest
 from sqlalchemy import update
 
-from src.registro import normalizar_url, anonimizar, clasificaciones, codigo_ip, conectar, leer, purgar, registrar, registrar_decision
+from src.registro import (
+    anonimizar,
+    clasificaciones,
+    codigo_ip,
+    conectar,
+    leer,
+    normalizar_url,
+    purgar,
+    registrar,
+    registrar_decision,
+)
 
-RES = {"categoria": {"etiqueta": "SIN_SERVICIO", "probabilidad": 0.97}, "area_atencion": "SOPORTE_TECNICO",
-       "prioridad": {"etiqueta": "alta", "probabilidad": 0.9}, "requiere_revision_humana": False}
+RES = {
+    "categoria": {"etiqueta": "SIN_SERVICIO", "probabilidad": 0.97},
+    "area_atencion": "SOPORTE_TECNICO",
+    "prioridad": {"etiqueta": "alta", "probabilidad": 0.9},
+    "requiere_revision_humana": False,
+}
 
 
-@pytest.mark.parametrize("texto, esperado", [
-    ("mi cel es 0991234567", "mi cel es [TELÉFONO]"),
-    ("llamen al +593 99 123 4567", "llamen al [TELÉFONO]"),
-    ("cedula 1712345678 por favor", "cedula [CÉDULA] por favor"),
-    ("escriban a ana.p@correo.com", "escriban a [CORREO]"),
-    ("contrato 4455667 sin internet", "contrato [NÚMERO] sin internet"),
-    ("pague $56.28 y 3 dias sin servicio", "pague $56.28 y 3 dias sin servicio"),
-])
+@pytest.mark.parametrize(
+    "texto, esperado",
+    [
+        ("mi cel es 0991234567", "mi cel es [TELÉFONO]"),
+        ("llamen al +593 99 123 4567", "llamen al [TELÉFONO]"),
+        ("cedula 1712345678 por favor", "cedula [CÉDULA] por favor"),
+        ("escriban a ana.p@correo.com", "escriban a [CORREO]"),
+        ("contrato 4455667 sin internet", "contrato [NÚMERO] sin internet"),
+        ("pague $56.28 y 3 dias sin servicio", "pague $56.28 y 3 dias sin servicio"),
+    ],
+)
 def test_anonimizar(texto, esperado):
     assert anonimizar(texto) == esperado
 

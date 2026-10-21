@@ -1,4 +1,5 @@
 """Pruebas de las funciones de la aplicación (sin levantar la interfaz)."""
+
 import pandas as pd
 import pytest
 
@@ -8,12 +9,18 @@ from src.model import ClasificadorTriaje, construir_svm
 
 
 def _resultado(prioridad, p_alta):
-    return {"categoria": {"etiqueta": "SIN_SERVICIO", "probabilidad": 0.9, "distribucion": {}},
-            "prioridad": {"etiqueta": prioridad, "probabilidad": 0.6, "distribucion": {"alta": p_alta}},
-            "area_atencion": "SOPORTE_TECNICO", "requiere_revision_humana": False, "terminos_influyentes": ["internet"]}
+    return {
+        "categoria": {"etiqueta": "SIN_SERVICIO", "probabilidad": 0.9, "distribucion": {}},
+        "prioridad": {"etiqueta": prioridad, "probabilidad": 0.6, "distribucion": {"alta": p_alta}},
+        "area_atencion": "SOPORTE_TECNICO",
+        "requiere_revision_humana": False,
+        "terminos_influyentes": ["internet"],
+    }
 
 
-@pytest.mark.parametrize("prioridad, p_alta, esperado", [("alta", 0.9, False), ("media", 0.35, True), ("baja", 0.05, False)])
+@pytest.mark.parametrize(
+    "prioridad, p_alta, esperado", [("alta", 0.9, False), ("media", 0.35, True), ("baja", 0.05, False)]
+)
 def test_alerta_prioridad(prioridad, p_alta, esperado):
     assert alerta_prioridad(_resultado(prioridad, p_alta)) is esperado
 
@@ -32,8 +39,10 @@ def test_historial_y_csv():
 
 
 def test_clasificar_lote_marca_filas_invalidas(corpus_pequeno):
-    modelos = {o: construir_svm({"calibracion_cv": 2}).fit(corpus_pequeno["queja"], corpus_pequeno[o])
-               for o in ("categoria", "prioridad")}
+    modelos = {
+        o: construir_svm({"calibracion_cv": 2}).fit(corpus_pequeno["queja"], corpus_pequeno[o])
+        for o in ("categoria", "prioridad")
+    }
     m = ClasificadorTriaje(modelos, {"SIN_SERVICIO": "S", "FACTURACION": "F", "WIFI_EQUIPO": "S"})
     res = clasificar_lote(m, pd.DataFrame({"q": ["me cobraron dos veces la factura", "😡"]}), "q")
     assert res.loc[0, "error"] == "" and res.loc[1, "error"] != ""
@@ -41,10 +50,19 @@ def test_clasificar_lote_marca_filas_invalidas(corpus_pequeno):
 
 def test_indicadores_y_alertas():
     from app.app import alertas, indicadores
+
     ahora = pd.Timestamp.now(tz="America/Guayaquil")
-    df = pd.DataFrame({"fecha_hora": [ahora] * 10, "nombre": ["a"] * 5 + ["b"] * 5, "ip_hash": ["ip_1"] * 10,
-                       "decision": ["aceptada"] * 4 + ["corregida"] * 6, "requiere_revision": [True] * 3 + [False] * 7,
-                       "alerta_prioridad": [False] * 10, "conf_categoria": [0.9] * 10})
+    df = pd.DataFrame(
+        {
+            "fecha_hora": [ahora] * 10,
+            "nombre": ["a"] * 5 + ["b"] * 5,
+            "ip_hash": ["ip_1"] * 10,
+            "decision": ["aceptada"] * 4 + ["corregida"] * 6,
+            "requiere_revision": [True] * 3 + [False] * 7,
+            "alerta_prioridad": [False] * 10,
+            "conf_categoria": [0.9] * 10,
+        }
+    )
     ind = indicadores(df)
     assert ind["n"] == 10 and ind["personas"] == 2 and ind["aceptacion"] == 0.4 and abs(ind["abstencion"] - 0.3) < 1e-9
     msj = alertas(df)

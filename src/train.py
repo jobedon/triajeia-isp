@@ -4,6 +4,7 @@ Uso:
     python -m src.train                       # usa config.yaml y, si existe, results/metrics/mejores_params_svm.json
     python -m src.train --params otros.json   # hiperparámetros alternativos
 """
+
 import argparse
 
 import pandas as pd
@@ -49,13 +50,18 @@ def entrenar(cfg: dict, params: dict[str, dict], usar_validacion: bool = True) -
             m = metricas(val[objetivo], pipe.predict(val["texto"]))
             reporte[objetivo] = {"f1_macro_val": m["f1_macro"], "exactitud_val": m["exactitud"]}
             log.info("%s · F1-macro en validación = %.3f", objetivo, m["f1_macro"])
-    clf = ClasificadorTriaje(modelos, cfg["areas"], cfg["decision"]["umbral_confianza"],
-                             cfg["decision"]["terminos_influyentes"],
-                             {"params": params, "entrenado_con": "train" if usar_validacion else "train+val"})
+    clf = ClasificadorTriaje(
+        modelos,
+        cfg["areas"],
+        cfg["decision"]["umbral_confianza"],
+        cfg["decision"]["terminos_influyentes"],
+        {"params": params, "entrenado_con": "train" if usar_validacion else "train+val"},
+    )
     return clf, reporte
 
 
 def main() -> None:
+    """Punto de entrada de la línea de comandos: entrena y guarda el clasificador."""
     ap = argparse.ArgumentParser(description="Entrena el clasificador TriajeIA-ISP")
     ap.add_argument("--config", default="config.yaml")
     ap.add_argument("--params", default=None, help="JSON con hiperparámetros por objetivo")

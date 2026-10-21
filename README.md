@@ -119,6 +119,7 @@ python -m venv .venv && source .venv/bin/activate      # en Windows: .venv\Scrip
 pip install -r requirements.txt
 
 pytest -q                                   # 33 pruebas unitarias
+ruff check . && ruff format --check .      # estilo PEP 8 (configuración en ruff.toml)
 streamlit run app/app.py                    # aplicación en http://localhost:8501
 python -m src.train --final                 # reentrenar el modelo (opcional)
 ```
@@ -172,9 +173,10 @@ triajeia-isp/
 ├── notebooks/   01 exploración · 02 preprocesamiento · 03 modelado · 04 optimización · 05 evaluación (ejecutados en Colab)
 ├── src/         utils · data_processing · model · train · evaluate · registro
 ├── models/      best_model.joblib (final), model_v1_svm_base.joblib y su ficha
-├── app/         aplicación Streamlit (app.py) y estilos (estilo.py)
+├── app/         aplicación Streamlit (app.py), componentes visuales (estilo.py) y hoja de estilos (assets/)
 ├── tests/       pruebas unitarias de datos, modelo, aplicación y registro
-└── results/     figures/ (figuras de los notebooks) y metrics/ (métricas, trials y entorno de cada ejecución)
+└── results/     figures/ (figuras de los notebooks), metrics/ (métricas, trials y entorno de cada ejecución) y
+                 reports/ (diapositivas del pitch y resumen de una página)
 ```
 
 ## 8. Consideraciones éticas

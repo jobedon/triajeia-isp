@@ -51,6 +51,9 @@ resultado = modelo.predecir("desde ayer no tengo internet y trabajo desde la cas
 print(resultado["categoria"]["etiqueta"], resultado["prioridad"]["etiqueta"], resultado["area_atencion"])
 ```
 
+Los modelos se guardan con `joblib` (extensión `.joblib`) en lugar de `pickle` (`.pkl`, como sugiere la estructura del
+curso): usa el mismo formato de Python, pero comprime mejor los arreglos grandes de scikit-learn.
+
 Requiere **scikit-learn 1.6.1**, la misma versión con que se entrenó: con otra versión, `joblib` podría no cargar el
 modelo o hacerlo con advertencias.
 

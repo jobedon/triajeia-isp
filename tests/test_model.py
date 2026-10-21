@@ -1,4 +1,5 @@
 """Pruebas del modelo, del clasificador de triaje y de las funciones de evaluación."""
+
 import numpy as np
 import pytest
 
@@ -48,6 +49,7 @@ def test_mcnemar_e_ic():
 
 def test_subgrupos_marca_pocos_casos():
     import pandas as pd
+
     df = pd.DataFrame({"g": ["x"] * 40 + ["y"] * 5, "r": ["a", "b"] * 22 + ["a"], "p": ["a", "b"] * 22 + ["b"]})
     t = por_subgrupo(df, "g", "r", "p", n_minimo=30, n_boot=100).set_index("grupo")
     assert bool(t.loc["x", "concluyente"]) and not bool(t.loc["y", "concluyente"])

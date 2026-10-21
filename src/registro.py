@@ -7,6 +7,7 @@
 La conexión se define con una URL de SQLAlchemy: por defecto SQLite local; para la nube basta usar una URL de
 PostgreSQL (variable de entorno TRIAJEIA_DB_URL o secreto de Streamlit).
 """
+
 import hashlib
 import os
 import re
@@ -16,8 +17,22 @@ from pathlib import Path
 from typing import Any
 
 import pandas as pd
-from sqlalchemy import (Boolean, Column, DateTime, Float, Integer, MetaData, String, Table, Text, create_engine,
-                        delete, insert, select, update)
+from sqlalchemy import (
+    Boolean,
+    Column,
+    DateTime,
+    Float,
+    Integer,
+    MetaData,
+    String,
+    Table,
+    Text,
+    create_engine,
+    delete,
+    insert,
+    select,
+    update,
+)
 from sqlalchemy.engine import Engine
 
 from .utils import RAIZ, obtener_logger
@@ -30,7 +45,8 @@ DIAS_RETENCION = 30
 
 metadata = MetaData()
 clasificaciones = Table(
-    "clasificaciones", metadata,
+    "clasificaciones",
+    metadata,
     Column("id", Integer, primary_key=True, autoincrement=True),
     Column("fecha_hora", DateTime(timezone=True), nullable=False, index=True),
     Column("nombre", String(80), nullable=False),
@@ -43,7 +59,7 @@ clasificaciones = Table(
     Column("conf_prioridad", Float, nullable=False),
     Column("requiere_revision", Boolean, nullable=False),
     Column("alerta_prioridad", Boolean, nullable=False),
-    Column("decision", String(12), nullable=False, default="pendiente"),   # pendiente | aceptada | corregida
+    Column("decision", String(12), nullable=False, default="pendiente"),  # pendiente | aceptada | corregida
     Column("correccion_categoria", String(40)),
     Column("correccion_prioridad", String(10)),
     Column("version_modelo", String(40)),
@@ -111,27 +127,38 @@ def describir(motor: Engine) -> str:
     return f"PostgreSQL · {u.host} · base «{u.database}»"
 
 
-def registrar(motor: Engine, nombre: str, ip: str | None, mensaje: str, resultado: dict[str, Any],
-              alerta: bool, version: str = "") -> int:
+def registrar(
+    motor: Engine, nombre: str, ip: str | None, mensaje: str, resultado: dict[str, Any], alerta: bool, version: str = ""
+) -> int:
     """Guarda una clasificación y devuelve su id."""
     fila = {
-        "fecha_hora": datetime.now(timezone.utc), "nombre": (nombre or "").strip()[:80] or "(anónimo)",
-        "ip_hash": codigo_ip(ip), "mensaje": anonimizar(mensaje),
-        "categoria": resultado["categoria"]["etiqueta"], "conf_categoria": resultado["categoria"]["probabilidad"],
-        "area": resultado["area_atencion"], "prioridad": resultado["prioridad"]["etiqueta"],
+        "fecha_hora": datetime.now(timezone.utc),
+        "nombre": (nombre or "").strip()[:80] or "(anónimo)",
+        "ip_hash": codigo_ip(ip),
+        "mensaje": anonimizar(mensaje),
+        "categoria": resultado["categoria"]["etiqueta"],
+        "conf_categoria": resultado["categoria"]["probabilidad"],
+        "area": resultado["area_atencion"],
+        "prioridad": resultado["prioridad"]["etiqueta"],
         "conf_prioridad": resultado["prioridad"]["probabilidad"],
-        "requiere_revision": bool(resultado["requiere_revision_humana"]), "alerta_prioridad": bool(alerta),
-        "decision": "pendiente", "version_modelo": version,
+        "requiere_revision": bool(resultado["requiere_revision_humana"]),
+        "alerta_prioridad": bool(alerta),
+        "decision": "pendiente",
+        "version_modelo": version,
     }
     with motor.begin() as c:
         return int(c.execute(insert(clasificaciones).values(**fila)).inserted_primary_key[0])
 
 
-def registrar_decision(motor: Engine, id_: int, aceptada: bool, categoria: str | None = None,
-                       prioridad: str | None = None) -> None:
+def registrar_decision(
+    motor: Engine, id_: int, aceptada: bool, categoria: str | None = None, prioridad: str | None = None
+) -> None:
     """Guarda si la persona aceptó la sugerencia o la corrigió (y a qué)."""
-    valores = {"decision": "aceptada"} if aceptada else {
-        "decision": "corregida", "correccion_categoria": categoria, "correccion_prioridad": prioridad}
+    valores = (
+        {"decision": "aceptada"}
+        if aceptada
+        else {"decision": "corregida", "correccion_categoria": categoria, "correccion_prioridad": prioridad}
+    )
     with motor.begin() as c:
         c.execute(update(clasificaciones).where(clasificaciones.c.id == id_).values(**valores))
 

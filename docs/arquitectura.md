@@ -142,7 +142,7 @@ flowchart LR
 | `src/train.py` | Entrenamiento por línea de comandos (`python -m src.train`) |
 | `src/evaluate.py` | Métricas, intervalos *bootstrap*, McNemar, subgrupos, riesgo–cobertura, costo y perturbaciones de estrés |
 | `src/registro.py` | Base de datos (SQLite o PostgreSQL), anonimización, código de IP, decisiones y retención |
-| `app/app.py`, `app/estilo.py` | Interfaz Streamlit y su estilo |
+| `app/app.py`, `app/estilo.py`, `app/assets/estilo.css` | Interfaz Streamlit, componentes visuales y hoja de estilos |
 | `tests/` | 33 pruebas unitarias (`pytest`) |
 
 ## 6. Tecnologías y versiones
@@ -158,6 +158,7 @@ flowchart LR
 | Interfaz | Streamlit · Plotly | 1.66.0 · 7.1.0 |
 | Base de datos | SQLAlchemy · psycopg · PostgreSQL (Neon) | 2.0.55 · 3.3.6 · servicio gestionado |
 | Pruebas | pytest | 9.1.1 |
+| Estilo del código (PEP 8) | ruff | 0.17.1 |
 | Entorno de cómputo | Google Colab (GPU Tesla T4) · Streamlit Community Cloud | — |
 
 Las versiones exactas de cada ejecución en Colab quedaron registradas en `results/metrics/entorno_0*.json`. En Colab,
@@ -173,5 +174,5 @@ ejecución no quedó registrada.
 | Secretos | `admin_password`, `db_url` e `ip_sal`, en la configuración de Streamlit; nunca en el repositorio |
 | Configuración de la interfaz | `.streamlit/config.toml` (tema, tamaño máximo de carga, sin estadísticas de uso) |
 
-Al subir cambios a `main`, Streamlit actualiza la aplicación. Si cambian módulos de `src/` o `app/estilo.py`, hay que
+Al subir cambios a `main`, Streamlit actualiza la aplicación. Si cambian módulos de `src/`, `app/estilo.py` o `app/assets/`, hay que
 reiniciarla (*Reboot app*), porque Python no recarga los módulos ya importados.
