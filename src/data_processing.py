@@ -1,4 +1,5 @@
 """Carga, limpieza, validación y división del corpus de quejas."""
+
 import re
 import unicodedata
 
@@ -86,8 +87,7 @@ def dividir(df: pd.DataFrame, objetivo: str, fraccion_validacion: float, semilla
     resto = df[df["conjunto"] != "prueba"].copy()
     if test.empty or resto.empty:
         raise ValueError("El corpus debe tener filas de entrenamiento y de prueba en la columna «conjunto»")
-    train, val = train_test_split(resto, test_size=fraccion_validacion, random_state=semilla,
-                                  stratify=resto[objetivo])
+    train, val = train_test_split(resto, test_size=fraccion_validacion, random_state=semilla, stratify=resto[objetivo])
     comunes = set(train["queja"].str.lower()) & set(test["queja"].str.lower())
     if comunes:
         raise ValueError(f"Fuga de datos: {len(comunes)} textos aparecen en entrenamiento y prueba")

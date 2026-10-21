@@ -1,4 +1,5 @@
 """Definición del modelo: SVM lineal sobre TF-IDF con probabilidades calibradas y el clasificador de triaje."""
+
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
@@ -16,9 +17,11 @@ from .utils import obtener_logger, ruta
 log = obtener_logger(__name__)
 
 # Palabras vacías que no ayudan a explicar una predicción al operador.
-VACIAS = set("""a al algo ante con contra de del desde donde el ella ellos en entre era es esa ese eso esta este esto
+VACIAS = set(
+    """a al algo ante con contra de del desde donde el ella ellos en entre era es esa ese eso esta este esto
 estoy fue ha hace han hasta hay la las le les lo los me mi mis muy nada ni no nos o para pero por porque que qué se
-ser si sí sin sobre su sus también te tengo tiene todo todos tu un una uno unos ya yo y q xq the and""".split())
+ser si sí sin sobre su sus también te tengo tiene todo todos tu un una uno unos ya yo y q xq the and""".split()
+)
 
 
 def construir_svm(params: dict[str, Any], semilla: int = 42) -> Pipeline:
@@ -27,16 +30,38 @@ def construir_svm(params: dict[str, Any], semilla: int = 42) -> Pipeline:
     La calibración (sigmoide con validación cruzada interna) convierte los márgenes de la SVM en
     probabilidades, necesarias para mostrar la confianza y para el umbral de abstención.
     """
-    vectores = [("palabra", TfidfVectorizer(
-        analyzer="word", ngram_range=tuple(params.get("palabra_ngramas", (1, 2))),
-        min_df=params.get("min_df", 1), sublinear_tf=params.get("sublinear_tf", True),
-        lowercase=True, token_pattern=r"(?u)\b\w+\b"))]
+    vectores = [
+        (
+            "palabra",
+            TfidfVectorizer(
+                analyzer="word",
+                ngram_range=tuple(params.get("palabra_ngramas", (1, 2))),
+                min_df=params.get("min_df", 1),
+                sublinear_tf=params.get("sublinear_tf", True),
+                lowercase=True,
+                token_pattern=r"(?u)\b\w+\b",
+            ),
+        )
+    ]
     if params.get("usar_caracteres", True):
-        vectores.append(("caracter", TfidfVectorizer(
-            analyzer="char_wb", ngram_range=tuple(params.get("caracter_ngramas", (3, 5))),
-            min_df=params.get("min_df", 1), sublinear_tf=params.get("sublinear_tf", True), lowercase=True)))
-    svm = LinearSVC(C=params.get("C", 0.3), class_weight=params.get("class_weight", "balanced"),
-                    max_iter=10000, random_state=semilla)
+        vectores.append(
+            (
+                "caracter",
+                TfidfVectorizer(
+                    analyzer="char_wb",
+                    ngram_range=tuple(params.get("caracter_ngramas", (3, 5))),
+                    min_df=params.get("min_df", 1),
+                    sublinear_tf=params.get("sublinear_tf", True),
+                    lowercase=True,
+                ),
+            )
+        )
+    svm = LinearSVC(
+        C=params.get("C", 0.3),
+        class_weight=params.get("class_weight", "balanced"),
+        max_iter=10000,
+        random_state=semilla,
+    )
     clf = CalibratedClassifierCV(svm, method="sigmoid", cv=params.get("calibracion_cv", 5))
     return Pipeline([("rasgos", FeatureUnion(vectores)), ("clf", clf)])
 
@@ -87,8 +112,11 @@ class ClasificadorTriaje:
             proba = pipe.predict_proba([limpio])[0]
             clases = list(pipe.classes_)
             i = int(np.argmax(proba))
-            salida[objetivo] = {"etiqueta": clases[i], "probabilidad": float(proba[i]),
-                                "distribucion": {c: float(p) for c, p in zip(clases, proba)}}
+            salida[objetivo] = {
+                "etiqueta": clases[i],
+                "probabilidad": float(proba[i]),
+                "distribucion": {c: float(p) for c, p in zip(clases, proba)},
+            }
         cat = salida["categoria"]["etiqueta"]
         salida["area_atencion"] = area_de(cat, self.areas)
         salida["requiere_revision_humana"] = any(salida[o]["probabilidad"] < self.umbral for o in self.modelos)

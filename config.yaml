@@ -45,7 +45,6 @@ xlmr:
 
 optimizacion:
   trials_svm: 100
-  trials_xlmr: 8
   cv_folds: 5
 
 evaluacion:

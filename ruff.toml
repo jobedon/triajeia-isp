@@ -1,0 +1,12 @@
+# Estilo del código (PEP 8) verificado con ruff: `ruff check .` y `ruff format --check .`
+line-length = 120
+target-version = "py311"
+extend-exclude = ["notebooks", "data/generacion"]
+
+[lint]
+select = ["E", "W", "F", "I", "D1"]
+ignore = ["D100"]
+
+[lint.per-file-ignores]
+"tests/*" = ["D1"]
+"app/app.py" = ["E402"]

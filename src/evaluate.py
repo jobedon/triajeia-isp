@@ -1,4 +1,5 @@
 """Evaluación: métricas, intervalos de confianza, McNemar, equidad por subgrupo, cobertura, costo y estrés."""
+
 import random
 import re
 from typing import Any, Callable, Sequence
@@ -16,18 +17,28 @@ def metricas(y_true: Sequence, y_pred: Sequence, clases: Sequence | None = None)
     return {
         "exactitud": accuracy_score(y_true, y_pred),
         "f1_macro": f1_score(y_true, y_pred, labels=clases, average="macro", zero_division=0),
-        "precision_macro": float(np.mean(p)), "recall_macro": float(np.mean(r)),
-        "por_clase": {c: {"precision": float(p[i]), "recall": float(r[i]), "f1": float(f[i]), "n": int(s[i])}
-                      for i, c in enumerate(clases)},
+        "precision_macro": float(np.mean(p)),
+        "recall_macro": float(np.mean(r)),
+        "por_clase": {
+            c: {"precision": float(p[i]), "recall": float(r[i]), "f1": float(f[i]), "n": int(s[i])}
+            for i, c in enumerate(clases)
+        },
     }
 
 
 def f1_macro(y_true, y_pred) -> float:
+    """F1-macro: promedio del F1 de cada clase, con el mismo peso para todas."""
     return f1_score(y_true, y_pred, average="macro", zero_division=0)
 
 
-def ic_bootstrap(y_true: Sequence, y_pred: Sequence, metrica: Callable = f1_macro, n: int = 2000,
-                 semilla: int = 42, alfa: float = 0.05) -> tuple[float, float, float]:
+def ic_bootstrap(
+    y_true: Sequence,
+    y_pred: Sequence,
+    metrica: Callable = f1_macro,
+    n: int = 2000,
+    semilla: int = 42,
+    alfa: float = 0.05,
+) -> tuple[float, float, float]:
     """Valor puntual e intervalo de confianza por bootstrap (percentiles).
 
     Returns:
@@ -49,8 +60,11 @@ def ic_diferencia(y_true, pred_a, pred_b, metrica: Callable = f1_macro, n: int =
     for _ in range(n):
         idx = rng.integers(0, m, m)
         difs.append(metrica(y_true[idx], pred_a[idx]) - metrica(y_true[idx], pred_b[idx]))
-    return (float(metrica(y_true, pred_a) - metrica(y_true, pred_b)),
-            float(np.quantile(difs, 0.025)), float(np.quantile(difs, 0.975)))
+    return (
+        float(metrica(y_true, pred_a) - metrica(y_true, pred_b)),
+        float(np.quantile(difs, 0.025)),
+        float(np.quantile(difs, 0.975)),
+    )
 
 
 def mcnemar(y_true: Sequence, pred_a: Sequence, pred_b: Sequence) -> dict[str, float]:
@@ -64,8 +78,15 @@ def mcnemar(y_true: Sequence, pred_a: Sequence, pred_b: Sequence) -> dict[str, f
     return {"solo_a": solo_a, "solo_b": solo_b, "chi2": float(est), "p": float(chi2.sf(est, 1))}
 
 
-def por_subgrupo(df: pd.DataFrame, col_grupo: str, col_real: str, col_pred: str, n_minimo: int = 30,
-                 n_boot: int = 1000, semilla: int = 42) -> pd.DataFrame:
+def por_subgrupo(
+    df: pd.DataFrame,
+    col_grupo: str,
+    col_real: str,
+    col_pred: str,
+    n_minimo: int = 30,
+    n_boot: int = 1000,
+    semilla: int = 42,
+) -> pd.DataFrame:
     """F1-macro por subgrupo con soporte (n), IC 95 % y si hay casos suficientes para concluir.
 
     Regla acordada tras la retroalimentación de la Semana 4: con n < n_minimo el valor se reporta,
@@ -74,8 +95,9 @@ def por_subgrupo(df: pd.DataFrame, col_grupo: str, col_real: str, col_pred: str,
     filas = []
     for g, sub in df.groupby(col_grupo):
         v, lo, hi = ic_bootstrap(sub[col_real], sub[col_pred], n=n_boot, semilla=semilla)
-        filas.append({"grupo": g, "n": len(sub), "f1_macro": v, "ic_inf": lo, "ic_sup": hi,
-                      "concluyente": len(sub) >= n_minimo})
+        filas.append(
+            {"grupo": g, "n": len(sub), "f1_macro": v, "ic_inf": lo, "ic_sup": hi, "concluyente": len(sub) >= n_minimo}
+        )
     return pd.DataFrame(filas).sort_values("n", ascending=False).reset_index(drop=True)
 
 
@@ -95,8 +117,14 @@ def riesgo_cobertura(y_true: Sequence, y_pred: Sequence, confianza: Sequence) ->
     for u in np.round(np.arange(0.0, 1.0, 0.05), 2):
         m = conf >= u
         n = int(m.sum())
-        filas.append({"umbral": float(u), "cobertura": n / len(conf),
-                      "riesgo": float(np.mean(y_true[m] != y_pred[m])) if n else np.nan, "n": n})
+        filas.append(
+            {
+                "umbral": float(u),
+                "cobertura": n / len(conf),
+                "riesgo": float(np.mean(y_true[m] != y_pred[m])) if n else np.nan,
+                "n": n,
+            }
+        )
     return pd.DataFrame(filas)
 
 
@@ -126,9 +154,9 @@ def con_erratas(texto: str, tasa: float, semilla: int = 0) -> str:
             i = rng.randrange(len(w))
             op = rng.choice(("cambiar", "borrar", "duplicar"))
             if op == "cambiar":
-                w = w[:i] + _VECINAS.get(w[i].lower(), w[i]) + w[i + 1:]
+                w = w[:i] + _VECINAS.get(w[i].lower(), w[i]) + w[i + 1 :]
             elif op == "borrar":
-                w = w[:i] + w[i + 1:]
+                w = w[:i] + w[i + 1 :]
             else:
                 w = w[:i] + w[i] + w[i:]
         palabras.append(w)
@@ -138,7 +166,7 @@ def con_erratas(texto: str, tasa: float, semilla: int = 0) -> str:
 def truncar(texto: str, fraccion: float) -> str:
     """Conserva solo la primera «fraccion» de las palabras (mensaje cortado)."""
     w = texto.split()
-    return " ".join(w[:max(1, int(round(len(w) * fraccion)))])
+    return " ".join(w[: max(1, int(round(len(w) * fraccion)))])
 
 
 def quitar_palabras(texto: str, tasa: float, semilla: int = 0) -> str:

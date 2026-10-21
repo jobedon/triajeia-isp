@@ -1,4 +1,5 @@
 """Funciones auxiliares: configuración, rutas, semillas y registro de eventos."""
+
 import json
 import logging
 import os

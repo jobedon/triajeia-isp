@@ -1,4 +1,5 @@
 """Pruebas de carga, limpieza, validación de entrada y división."""
+
 import pytest
 
 from src.data_processing import area_de, cargar_corpus, dividir, limpiar_texto, validar_entrada
@@ -10,10 +11,17 @@ def test_limpiar_texto_normaliza_sin_borrar_estilo():
     assert limpiar_texto(None) == ""
 
 
-@pytest.mark.parametrize("texto, valido", [
-    ("", False), ("   ", False), ("12345 😡😡", False), ("sin internet", False),
-    ("no tengo internet desde ayer", True), ("x" * 2001 + " a b", False),
-])
+@pytest.mark.parametrize(
+    "texto, valido",
+    [
+        ("", False),
+        ("   ", False),
+        ("12345 😡😡", False),
+        ("sin internet", False),
+        ("no tengo internet desde ayer", True),
+        ("x" * 2001 + " a b", False),
+    ],
+)
 def test_validar_entrada(texto, valido):
     ok, mensaje = validar_entrada(texto)
     assert ok is valido
