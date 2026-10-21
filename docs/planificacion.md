@@ -17,6 +17,7 @@ informal por clientes de un proveedor de internet, y entregarlo como un servicio
 
 | Objetivo específico | Meta planificada | Resultado |
 |---|---|---|
+| F1-macro en el benchmark (tarea A, Semanas 2 y 3) | ≥ 0,80 (línea base publicada 0,72) | **Parcial:** SVM 0,813 en la prueba completa, pero 0,767 en la prueba sin duplicados; XLM-R 0,788 sin duplicados. Vale la prueba sin duplicados (el 19 % de la completa repite textos del entrenamiento), así que la meta no se alcanzó |
 | Corpus del dominio en español de Ecuador | 300–400 reclamos reales, doble anotación, κ ≥ 0,60 | **Cambió:** 1.500 quejas **sintéticas** con etiquetas por reglas; sin κ (sección 6) |
 | Líneas base | Reglas de palabras clave (N0) y TF-IDF + SVM (N1) | *Baseline* de clase mayoritaria y estratificado; SVM como modelo principal |
 | Modelo de lenguaje ajustado | Encoder en español (BETO o RoBERTa-BNE) que supere a N1 con McNemar | **XLM-RoBERTa** (cambio de la Semana 2): empató con la SVM, que se mantiene |
