@@ -368,7 +368,7 @@ def main() -> None:
         st.pills("Casos de ejemplo", list(EJEMPLOS), key="ejemplo", on_change=_usar_ejemplo)
         texto = st.text_area("Reclamo del cliente", key="texto", height=120, max_chars=2000,
                              placeholder="Ejemplo: desde ayer no tengo internet y el foco del router está en rojo…",
-                             help="Escriba o pegue el reclamo tal como lo envió el cliente.")
+                             help="Escriba o pegue el reclamo tal como lo envió el cliente. No incluya nombres, cédulas, teléfonos ni direcciones.")
         def _limpiar():
             st.session_state.pop("ultimo", None)
             st.session_state["texto"] = ""
@@ -514,8 +514,9 @@ def main() -> None:
                 st.session_state["historial"] = []
                 st.rerun()
             if len(h) > 1:
-                fig = px.histogram(dfh, x="categoria", color="prioridad", title="Comparación de las predicciones de la sesión",
-                                   color_discrete_map=E.COLOR_PRIORIDAD)
+                fig = px.histogram(dfh.assign(categoria=dfh["categoria"].map(nombre)), x="categoria", color="prioridad",
+                                   title="Comparación de las predicciones de la sesión", color_discrete_map=E.COLOR_PRIORIDAD)
+                fig.update_layout(xaxis_title=None, yaxis_title="clasificaciones", legend_title="prioridad")
                 st.plotly_chart(fig, width="stretch", config={"displayModeBar": False})
 
     with tab_reg:
