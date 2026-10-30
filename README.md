@@ -175,6 +175,7 @@ triajeia-isp/
 ├── models/      best_model.joblib (final), model_v1_svm_base.joblib y su ficha
 ├── app/         aplicación Streamlit (app.py), componentes visuales (estilo.py) y hoja de estilos (assets/)
 ├── tests/       pruebas unitarias de datos, modelo, aplicación y registro
+├── videos/      video pitch y video de respuestas a las preguntas (MP4)
 └── results/     figures/ (figuras de los notebooks), metrics/ (métricas, trials y entorno de cada ejecución) y
                  reports/ (diapositivas del pitch y resumen de una página)
 ```
@@ -222,5 +223,10 @@ A la docente Gladys María Villegas Rugel, por la guía y la retroalimentación 
 
 ## 12. Videos
 
-- **Video pitch (5 minutos):** *pendiente*
-- **Video de respuestas a las preguntas:** *pendiente*
+| Video | Duración | Enlace |
+|---|---|---|
+| **Video pitch** | 5:00 | [`videos/video_pitch.mp4`](videos/video_pitch.mp4) · [descarga directa](https://github.com/jobedon/triajeia-isp/raw/main/videos/video_pitch.mp4) |
+| **Video de respuestas a las preguntas** | 17:50 | [`videos/video_respuestas.mp4`](videos/video_respuestas.mp4) · [descarga directa](https://github.com/jobedon/triajeia-isp/raw/main/videos/video_respuestas.mp4) |
+
+Formato MP4, 1280×720, con audio. En el video de respuestas, José Olmedo Bedón Sánchez responde las preguntas impares y
+Javier Isaías Hidalgo Fernández las pares.
