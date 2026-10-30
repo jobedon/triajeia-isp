@@ -113,7 +113,7 @@ sí (+0,010, IC 95 % que no incluye el 0). `C` explica el 79 % – 86 % de la va
 **Requisitos:** Python 3.11 a 3.13 (scikit-learn 1.6.1 no tiene paquetes precompilados para 3.14) y git.
 
 ```bash
-git clone https://github.com/jobedon/triajeia-isp.git   # repositorio privado: requiere acceso
+git clone https://github.com/jobedon/triajeia-isp.git
 cd triajeia-isp
 python -m venv .venv && source .venv/bin/activate      # en Windows: .venv\Scripts\activate
 pip install -r requirements.txt
@@ -142,9 +142,9 @@ db_url = "postgresql://…"     # base PostgreSQL para el registro; sin esto usa
 ip_sal = "…"                  # clave del código irreversible de la IP
 ```
 
-**Reproducir los experimentos en Google Colab:** abrir los notebooks `01` a `05` en orden con GPU T4. El repositorio
-es privado, así que cada notebook descarga el código con un *token* de solo lectura guardado en los Secretos de Colab
-(`GITHUB_TOKEN`) o desde `triajeia-isp.zip` en Google Drive.
+**Reproducir los experimentos en Google Colab:** abrir los notebooks `01` a `05` en orden con GPU T4. Se ejecutaron
+cuando el repositorio era privado: cada notebook descarga el código con un *token* de GitHub de solo lectura guardado en
+los Secretos de Colab (`GITHUB_TOKEN`) o desde `triajeia-isp.zip` en Google Drive.
 
 ## 6. Interfaz de usuario
 

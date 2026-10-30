@@ -78,7 +78,7 @@ informal por clientes de un proveedor de internet, y entregarlo como un servicio
 | Corpus v1 → v2 | El v1 tenía frases repetidas que delataban la categoría y una regla de prioridad injusta con las personas vulnerables | Se regeneró con seis redactores independientes y control de calidad automático |
 | BETO → XLM-RoBERTa | El benchmark de la tarea A es 87 % inglés (Semana 2) | Modelo multilingüe para ambas tareas |
 | API REST → aplicación Streamlit | La entrega final exige una interfaz utilizable desplegada; Streamlit cubre interfaz y servicio en un solo componente | La lógica vive en `src/` y puede exponerse como API en el futuro |
-| Repositorio público → privado | Indicación de la universidad | Acceso a la docente como colaboradora (a confirmar con ella) |
+| Repositorio privado durante el desarrollo | Indicación de la universidad | Se hizo público para la entrega final (29/10/2026), como exige la descripción del proyecto |
 
 ## 7. Recursos
 
